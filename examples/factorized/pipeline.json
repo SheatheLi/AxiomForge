@@ -1,0 +1,7 @@
+{
+  "facts": "facts.csv", "key": "sku", "measure": "cost", "operation": "sum",
+  "stages": [
+    {"name": "region_join", "path": "regions.csv", "segment": "region", "dropna": true},
+    {"name": "tag_join", "path": "tags.csv", "segment": "tag", "dropna": true}
+  ]
+}

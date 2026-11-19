@@ -1,0 +1,21 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/sqlfluff/sqlfluff/issues/8624",
+  "checkout": "__PROVIDE_CHECKOUT__",
+  "reproduce": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import fix,lint;from sqlfluff.core import FluffConfig\nq='SELECT a_really_long_column_name_that_goes_past_the_limit_okay AS alias_padding_x;'\na=fix(q,dialect=\"postgres\",rules=[\"LT05\",\"LT09\"])\nb=fix(a,dialect=\"postgres\",rules=[\"LT05\",\"LT09\"])\nif a!=b:raise AssertionError(\"ISSUE-8624-NONCONVERGENT-FIX\")\n"
+  ],
+  "control": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import fix,lint;from sqlfluff.core import FluffConfig\nq=\"SELECT x AS y\"\na=fix(q,dialect=\"postgres\",rules=[\"LT05\",\"LT09\"])\nassert a==fix(a,dialect=\"postgres\",rules=[\"LT05\",\"LT09\"])\n"
+  ],
+  "failure_fingerprint": "ISSUE-8624-NONCONVERGENT-FIX",
+  "editable_files": [
+    "src/sqlfluff/rules/layout/LT09.py"
+  ],
+  "timeout_seconds": 25,
+  "repetitions": 1
+}

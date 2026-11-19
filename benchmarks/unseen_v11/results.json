@@ -1,0 +1,78 @@
+{
+  "schema": "axiomforge.unseen-issues-results.v1",
+  "cases": [
+    {
+      "id": "req-6102",
+      "repo": "requests",
+      "url": "https://github.com/psf/requests/issues/6102",
+      "status": "NOT_SOLVED",
+      "attempts": 6,
+      "seconds": 11.051,
+      "operator": null,
+      "rejections": [
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 186,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 225,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 227,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 229,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 231,
+          "reason": "patch does not satisfy all declared failures and controls"
+        }
+      ]
+    },
+    {
+      "id": "core-1066",
+      "repo": "httpcore",
+      "url": "https://github.com/encode/httpcore/issues/1066",
+      "status": "NOT_SOLVED",
+      "attempts": 6,
+      "seconds": 12.224,
+      "operator": null,
+      "rejections": [
+        {
+          "operator": "ownership-aware-idle-reclamation",
+          "line": 270,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 320,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "optional-container-nonempty-distinction",
+          "line": 329,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "keyword-insertion",
+          "line": 205,
+          "reason": "patch does not satisfy all declared failures and controls"
+        },
+        {
+          "operator": "keyword-insertion",
+          "line": 205,
+          "reason": "patch does not satisfy all declared failures and controls"
+        }
+      ]
+    }
+  ],
+  "assessment": "Operator frozen before running; two issues are not a statistically reliable population estimate."
+}

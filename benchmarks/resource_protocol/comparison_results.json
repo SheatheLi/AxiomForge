@@ -1,0 +1,79 @@
+{
+  "study": "synthetic-risk-window",
+  "results": {
+    "all_sites": {
+      "eligible_sites": 8,
+      "tested_sites": 8,
+      "violations": 3,
+      "risk_excluded_sites": 0,
+      "site_results": [
+        {
+          "site": "risk-window-model.py:Service.operation:6:8:0",
+          "status": "CANCELLED",
+          "passed": true
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:7:8:1",
+          "status": "CANCELLED",
+          "passed": true
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:8:8:2",
+          "status": "CANCELLED",
+          "passed": true
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:9:8:3",
+          "status": "CANCELLED",
+          "passed": true
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:10:8:4",
+          "status": "CANCELLED",
+          "passed": true
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:13:12:5",
+          "status": "CANCELLED",
+          "passed": false
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:14:12:6",
+          "status": "CANCELLED",
+          "passed": false
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:15:12:7",
+          "status": "CANCELLED",
+          "passed": false
+        }
+      ],
+      "elapsed_seconds": 0.000606
+    },
+    "obligation_guided": {
+      "eligible_sites": 8,
+      "tested_sites": 3,
+      "violations": 3,
+      "risk_excluded_sites": 5,
+      "site_results": [
+        {
+          "site": "risk-window-model.py:Service.operation:13:12:5",
+          "status": "CANCELLED",
+          "passed": false
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:14:12:6",
+          "status": "CANCELLED",
+          "passed": false
+        },
+        {
+          "site": "risk-window-model.py:Service.operation:15:12:7",
+          "status": "CANCELLED",
+          "passed": false
+        }
+      ],
+      "elapsed_seconds": 0.000356
+    }
+  },
+  "limits": "Handwritten model and authoritative resource probe. Filter is NOT completeness preserving; time not benchmarked across projects."
+}

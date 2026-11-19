@@ -1,0 +1,43 @@
+{
+  "library": "SQLAlchemy",
+  "version": "2.0.50",
+  "issue": "https://github.com/sqlalchemy/sqlalchemy/issues/13548",
+  "integration": "Real QueuePool and event listener with SQLite DBAPI",
+  "pre_fix_behavior": {
+    "failures": 5,
+    "dbapi_created_calls": 5,
+    "formal_pool_close_calls": 0,
+    "manual_dbapi_close_calls": 0,
+    "pool_close_gap": 5,
+    "ownership_oracle": {
+      "created": 5,
+      "retired": 0,
+      "not_retired": 5,
+      "unclosed_generations": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "violations": []
+    },
+    "note": "The GC/SQLite physical socket state is NOT measured."
+  },
+  "application_workaround": {
+    "failures": 5,
+    "dbapi_created_calls": 5,
+    "formal_pool_close_calls": 0,
+    "manual_dbapi_close_calls": 5,
+    "pool_close_gap": 5,
+    "ownership_oracle": {
+      "created": 5,
+      "retired": 5,
+      "not_retired": 0,
+      "unclosed_generations": [],
+      "violations": []
+    },
+    "note": "The GC/SQLite physical socket state is NOT measured."
+  },
+  "scope": "Formal pool close path only; does not prove remote DB sessions or test upstream post-fix version."
+}

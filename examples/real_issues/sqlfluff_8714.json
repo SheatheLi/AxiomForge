@@ -1,0 +1,21 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/sqlfluff/sqlfluff/issues/8714",
+  "checkout": "__PROVIDE_CHECKOUT__",
+  "reproduce": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import fix,lint;from sqlfluff.core import FluffConfig\ncfg=FluffConfig(configs={'core':{'dialect':'postgres','rules':'RF03'},'rules':{'references.consistent':{'single_table_references':'unqualified'}}})\nq='UPDATE orders AS o SET x = 1 WHERE EXISTS (SELECT 1 FROM lines AS l WHERE l.id = o.id);'\nout=fix(q,config=cfg,rules=[\"RF03\"])\nif \"l.id = o.id\" not in out or \"id = id\" in out:raise AssertionError(\"ISSUE-8714-DML-CORRELATION-LOST\")\n"
+  ],
+  "control": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import fix,lint;from sqlfluff.core import FluffConfig\ncfg=FluffConfig(configs={'core':{'dialect':'postgres','rules':'RF03'},'rules':{'references.consistent':{'single_table_references':'unqualified'}}})\nq=\"SELECT t.a FROM t\"\nout=fix(q,config=cfg,rules=[\"RF03\"])\nassert \"t.a\" not in out and \"SELECT a FROM t\" in out\n"
+  ],
+  "failure_fingerprint": "ISSUE-8714-DML-CORRELATION-LOST",
+  "editable_files": [
+    "src/sqlfluff/rules/references/RF03.py"
+  ],
+  "timeout_seconds": 25,
+  "repetitions": 1
+}

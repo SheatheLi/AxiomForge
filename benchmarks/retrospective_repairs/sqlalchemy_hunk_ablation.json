@@ -1,0 +1,18 @@
+{
+  "schema": "axiomforge.ablation.v1",
+  "status": "AUDITED",
+  "issue_url": "https://github.com/sqlalchemy/sqlalchemy/issues/13637",
+  "original_patch_sha256": "63fff0f53caafc3e051e87af0bbdaaa2f7226211a34b9f9e7d9a42fa35264836",
+  "hunk_count": 1,
+  "hunks": [
+    {
+      "index": 0,
+      "file": "sqlalchemy/dialects/postgresql/base.py",
+      "result": "SOLE_HUNK",
+      "explanation": "the original baseline fails; removal is equivalent to no patch"
+    }
+  ],
+  "evidence_relative_necessary": true,
+  "meaning": "necessary only under the declared executable tests; not semantic or global minimality",
+  "seconds": 8.829
+}

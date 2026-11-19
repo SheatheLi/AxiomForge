@@ -1,0 +1,196 @@
+{
+  "full_observation": {
+    "double_cancel": {
+      "pool_exhaustion": {
+        "blocked": [
+          [
+            4,
+            "TimeoutError"
+          ]
+        ],
+        "cleanup_cancel_count": 6,
+        "early_committed_close_interrupted": 3,
+        "first_iteration": 4,
+        "notes": "Cancellation stage evidence is observed instrumentation, not a full causal proof.",
+        "present": true,
+        "protocol_findings": [
+          "STRANDED_ACTIVE_POOL_CONNECTION"
+        ],
+        "quiescent_active": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      },
+      "stranded_active": {
+        "blocked": [
+          [
+            4,
+            "TimeoutError"
+          ]
+        ],
+        "cleanup_cancel_count": 6,
+        "early_committed_close_interrupted": 3,
+        "first_iteration": 1,
+        "notes": "Cancellation stage evidence is observed instrumentation, not a full causal proof.",
+        "present": true,
+        "protocol_findings": [
+          "STRANDED_ACTIVE_POOL_CONNECTION"
+        ],
+        "quiescent_active": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      }
+    },
+    "mechanism": "Cancellation during HTTP11ConnectionByteStream.aclose after the close flag was set can skip a later retry; inspect observed cleanup events.",
+    "single_cancel_blocked": [],
+    "single_cancel_control_active": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "independent_patch_comparison": {
+    "candidate_diff_sha256": "8daac06e2ac968d1580683819177c3dd9564ad19b113380bde73cfddb43dc45c",
+    "double_active": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "double_blocked": 0,
+    "eliminated_observed_symptom": true,
+    "scope": "Throwaway patched HTTPcore 1.0.9, independent Python process",
+    "warning": "Only this local TCP schedule was exercised; no Trio proof or upstream approval"
+  },
+  "input": {
+    "compare_repair": true,
+    "confirmations": 2,
+    "maximum_repetitions": 5,
+    "per_process_timeout_s": 35
+  },
+  "limits": [
+    "Real native HTTPX/HTTPcore loopback, no external network",
+    "Failure prefix minimized by actual execution, not byte-level trace shrinking",
+    "Timing-dependent; clean outcome on another host is not proof of no bug",
+    "No installed package is modified; candidate patch is applied in a disposable copy"
+  ],
+  "prefix_reduction": {
+    "attempts": [
+      {
+        "evidence": "raw/prefix_1.json",
+        "first_iteration": null,
+        "present": false,
+        "repetitions": 1
+      },
+      {
+        "evidence": "raw/prefix_2.json",
+        "first_iteration": null,
+        "present": false,
+        "repetitions": 2
+      },
+      {
+        "evidence": "raw/prefix_3.json",
+        "first_iteration": null,
+        "present": false,
+        "repetitions": 3
+      },
+      {
+        "evidence": "raw/prefix_4.json",
+        "first_iteration": 4,
+        "present": true,
+        "repetitions": 4
+      }
+    ],
+    "confirmation_runs": [
+      {
+        "evidence": "raw/confirm_1.json",
+        "present": true
+      },
+      {
+        "evidence": "raw/confirm_2.json",
+        "present": true
+      }
+    ],
+    "minimal_observation": {
+      "blocked": [
+        [
+          4,
+          "TimeoutError"
+        ]
+      ],
+      "cleanup_cancel_count": 6,
+      "early_committed_close_interrupted": 3,
+      "first_iteration": 4,
+      "notes": "Cancellation stage evidence is observed instrumentation, not a full causal proof.",
+      "present": true,
+      "protocol_findings": [
+        "STRANDED_ACTIVE_POOL_CONNECTION"
+      ],
+      "quiescent_active": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    "minimum_repetitions": 4,
+    "stable_under_requested_checks": true,
+    "unit": "HTTP stream cancel/retry iterations, not generic trace events"
+  },
+  "replay": {
+    "command": "python -m axiomforge.issue_engine.reliability_cli replay-triage evidence/本轮_原生故障诊断/triage.json --out evidence/本轮_原生故障诊断/replayed.json",
+    "expected_symptom": "pool_exhaustion",
+    "original_target_identity": {
+      "baseline_runner_sha256": "ecd228dbbf63fee6ef55afbdac21b18709b142135a013e5cf0b886f42c2c26c0",
+      "httpcore": "1.0.9",
+      "httpcore_http11_sha256": "faa33d6d5ecf8d2405e6fc6cdfbf9e5173881706c88cf7196cd962b97f53b41c",
+      "httpx": "0.28.1",
+      "patched_runner_sha256": "f7ab30f617a3f914b16822a38d34aeada9a04abb6b33292059e32d06f329c087",
+      "python": "3.13.5"
+    },
+    "repetitions": 4
+  },
+  "schema": "axiomforge.native-issue-triage.v1",
+  "source_issue": "https://github.com/encode/httpx/issues/3782",
+  "status": "REPRODUCED",
+  "symptom": "pool_exhaustion",
+  "target": {
+    "baseline_runner_sha256": "ecd228dbbf63fee6ef55afbdac21b18709b142135a013e5cf0b886f42c2c26c0",
+    "httpcore": "1.0.9",
+    "httpcore_http11_sha256": "faa33d6d5ecf8d2405e6fc6cdfbf9e5173881706c88cf7196cd962b97f53b41c",
+    "httpx": "0.28.1",
+    "patched_runner_sha256": "f7ab30f617a3f914b16822a38d34aeada9a04abb6b33292059e32d06f329c087",
+    "python": "3.13.5"
+  }
+}

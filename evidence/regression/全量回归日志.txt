@@ -1,0 +1,275 @@
+============================================================
+FILE tests/issue_engine/test_ablation.py  passed
+============================================================
+..                                                                       [100%]
+2 passed in 8.26s
+
+============================================================
+FILE tests/issue_engine/test_causal_reduction.py  passed
+============================================================
+..                                                                       [100%]
+2 passed in 0.01s
+
+============================================================
+FILE tests/issue_engine/test_checkout_import_priority.py  passed
+============================================================
+.                                                                        [100%]
+1 passed in 2.76s
+
+============================================================
+FILE tests/issue_engine/test_cleanup_budget_boundary.py  passed
+============================================================
+.                                                                        [100%]
+1 passed in 0.01s
+
+============================================================
+FILE tests/issue_engine/test_cli_init.py  passed
+============================================================
+..                                                                       [100%]
+2 passed in 0.02s
+
+============================================================
+FILE tests/issue_engine/test_composed_repair.py  passed
+============================================================
+...                                                                      [100%]
+3 passed in 40.38s
+
+============================================================
+FILE tests/issue_engine/test_context_repair.py  passed
+============================================================
+......                                                                   [100%]
+6 passed in 0.02s
+
+============================================================
+FILE tests/issue_engine/test_contract_repairs.py  passed
+============================================================
+.....                                                                    [100%]
+5 passed in 0.01s
+
+============================================================
+FILE tests/issue_engine/test_convention_repair.py  passed
+============================================================
+.....                                                                    [100%]
+5 passed in 0.02s
+
+============================================================
+FILE tests/issue_engine/test_core.py  passed
+============================================================
+................................                                         [100%]
+32 passed in 95.54s (0:01:35)
+
+============================================================
+FILE tests/issue_engine/test_deadline_budget.py  passed
+============================================================
+.                                                                        [100%]
+1 passed in 0.84s
+
+============================================================
+FILE tests/issue_engine/test_delimiter_repair.py  passed
+============================================================
+....                                                                     [100%]
+4 passed in 20.24s
+
+============================================================
+FILE tests/issue_engine/test_external_holdout.py  passed
+============================================================
+......                                                                   [100%]
+6 passed in 0.03s
+
+============================================================
+FILE tests/issue_engine/test_local_repro_proxy_isolation.py  passed
+============================================================
+.                                                                        [100%]
+1 passed in 0.14s
+
+============================================================
+FILE tests/issue_engine/test_localization.py  passed
+============================================================
+.........                                                                [100%]
+9 passed in 34.83s
+
+============================================================
+FILE tests/issue_engine/test_native_triage.py  passed
+============================================================
+..........                                                               [100%]
+10 passed in 24.96s
+
+============================================================
+FILE tests/issue_engine/test_ownership_repair.py  passed
+============================================================
+..                                                                       [100%]
+2 passed in 0.01s
+
+============================================================
+FILE tests/issue_engine/test_reliability_research.py  passed
+============================================================
+.................                                                        [100%]
+17 passed in 6.92s
+
+============================================================
+FILE tests/issue_engine/test_review_export.py  passed
+============================================================
+...                                                                      [100%]
+3 passed in 28.54s
+
+============================================================
+FILE tests/issue_engine/test_shape_guard_repair.py  passed
+============================================================
+..                                                                       [100%]
+2 passed in 0.01s
+
+============================================================
+FILE tests/issue_engine/test_structural_operators.py  passed
+============================================================
+........                                                                 [100%]
+8 passed in 2.48s
+
+============================================================
+FILE tests/issue_engine/test_v11_metamorphic.py  passed
+============================================================
+.....                                                                    [100%]
+5 passed in 0.08s
+
+============================================================
+FILE tests/issue_engine/test_v11_provenance.py  passed
+============================================================
+ssss                                                                     [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/issue_engine/test_v11_provenance.py:29: historical v1.1 provenance not bundled: artifacts/v11_cross_repository/v11_operator_freeze.json, artifacts/v11_cross_repository/development_evaluation.json, artifacts/v11_cross_repository/equal_budget_comparison.json, benchmarks/crossrepo_v11/manifest.json, benchmarks/unseen_v11/manifest.json
+SKIPPED [1] tests/issue_engine/test_v11_provenance.py:49: historical v1.1 provenance not bundled: artifacts/v11_cross_repository/v11_operator_freeze.json, artifacts/v11_cross_repository/development_evaluation.json, artifacts/v11_cross_repository/equal_budget_comparison.json, benchmarks/crossrepo_v11/manifest.json, benchmarks/unseen_v11/manifest.json
+SKIPPED [1] tests/issue_engine/test_v11_provenance.py:64: historical v1.1 provenance not bundled: artifacts/v11_cross_repository/v11_operator_freeze.json, artifacts/v11_cross_repository/development_evaluation.json, artifacts/v11_cross_repository/equal_budget_comparison.json, benchmarks/crossrepo_v11/manifest.json, benchmarks/unseen_v11/manifest.json
+SKIPPED [1] tests/issue_engine/test_v11_provenance.py:72: historical v1.1 provenance not bundled: artifacts/v11_cross_repository/v11_operator_freeze.json, artifacts/v11_cross_repository/development_evaluation.json, artifacts/v11_cross_repository/equal_budget_comparison.json, benchmarks/crossrepo_v11/manifest.json, benchmarks/unseen_v11/manifest.json
+4 skipped in 0.01s
+
+============================================================
+FILE tests/issue_engine/test_v12_dataflow.py  passed
+============================================================
+..............                                                           [100%]
+14 passed in 14.77s
+
+============================================================
+FILE tests/issue_engine/test_v12_interprocedural.py  passed
+============================================================
+.......                                                                  [100%]
+7 passed in 0.02s
+
+============================================================
+FILE tests/issue_engine/test_v12_may_def_properties.py  passed
+============================================================
+.....................................                                    [100%]
+37 passed in 0.05s
+
+============================================================
+FILE tests/issue_engine/test_v12_oracle_audit.py  passed
+============================================================
+....                                                                     [100%]
+4 passed in 18.47s
+
+============================================================
+FILE tests/issue_engine/test_v14_cancellation_safety.py  passed
+============================================================
+..............                                                           [100%]
+14 passed in 1.38s
+
+============================================================
+FILE tests/issue_engine/test_v15_resource_protocol.py  passed
+============================================================
+................                                                         [100%]
+16 passed in 0.29s
+
+============================================================
+FILE tests/test_authority_and_evidence.py  passed
+============================================================
+...............                                                          [100%]
+15 passed in 1.23s
+
+============================================================
+FILE tests/test_cli.py  passed
+============================================================
+...                                                                      [100%]
+3 passed in 0.33s
+
+============================================================
+FILE tests/test_external_microbatch.py  passed
+============================================================
+...........                                                              [100%]
+11 passed in 0.02s
+
+============================================================
+FILE tests/test_external_targets.py  passed
+============================================================
+...........                                                              [100%]
+11 passed in 1.93s
+
+============================================================
+FILE tests/test_grain_preflight.py  passed
+============================================================
+sss.....sss......                                                        [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_grain_preflight.py:26: external upstream CSV not bundled; run scripts/fetch_jaffle_seeds.py
+SKIPPED [1] tests/test_grain_preflight.py:32: external upstream CSV not bundled; run scripts/fetch_jaffle_seeds.py
+SKIPPED [1] tests/test_grain_preflight.py:51: external upstream CSV not bundled; run scripts/fetch_jaffle_seeds.py
+SKIPPED [1] tests/test_grain_preflight.py:110: external upstream CSV not bundled; run scripts/fetch_jaffle_seeds.py
+SKIPPED [1] tests/test_grain_preflight.py:122: external upstream CSV not bundled; run scripts/fetch_jaffle_seeds.py
+SKIPPED [1] tests/test_grain_preflight.py:134: external upstream CSV not bundled; run scripts/fetch_jaffle_seeds.py
+11 passed, 6 skipped in 0.04s
+
+============================================================
+FILE tests/test_guard_cegis.py  passed
+============================================================
+..........                                                               [100%]
+10 passed in 2.15s
+
+============================================================
+FILE tests/test_incremental_external_issues.py  passed
+============================================================
+....................................                                     [100%]
+36 passed in 2.71s
+
+============================================================
+FILE tests/test_join_semantic_provenance.py  passed
+============================================================
+..............                                                           [100%]
+14 passed in 0.99s
+
+============================================================
+FILE tests/test_materialized_factorized.py  passed
+============================================================
+..................                                                       [100%]
+18 passed in 0.62s
+
+============================================================
+FILE tests/test_pipeline_audit.py  passed
+============================================================
+.................                                                        [100%]
+17 passed in 0.26s
+
+============================================================
+FILE tests/test_reduction.py  passed
+============================================================
+...................                                                      [100%]
+19 passed in 2.27s
+
+============================================================
+FILE tests/test_replay_budget_contract.py  passed
+============================================================
+..                                                                       [100%]
+2 passed in 0.10s
+
+============================================================
+FILE tests/test_resource_lifecycle.py  passed
+============================================================
+........                                                                 [100%]
+8 passed in 0.01s
+
+============================================================
+FILE tests/test_semantic_provenance.py  passed
+============================================================
+............................                                             [100%]
+28 passed in 1.35s
+
+============================================================
+FILE tests/test_sql_review.py  passed
+============================================================
+...............                                                          [100%]
+15 passed in 1.87s

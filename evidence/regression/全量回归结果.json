@@ -1,0 +1,288 @@
+{
+  "test_files": 44,
+  "test_cases": 447,
+  "result": {
+    "passed": 437,
+    "skipped": 10,
+    "failed": 0
+  },
+  "timed_out_files": 0,
+  "failed_files": 0,
+  "run_type": "all 44 test files executed in isolated subprocesses with per-file 150 s timeout; not one shared single-process session",
+  "missing_evidence": {
+    "historical_v11_provenance": 4,
+    "upstream_jaffle_shop_csv": 6
+  },
+  "source_run": "2026-11-12T05:31:50.357117+00:00",
+  "finished_at_utc": "2026-11-12T05:37:57.051100+00:00",
+  "per_file": [
+    {
+      "test_file": "tests/issue_engine/test_ablation.py",
+      "status": "passed",
+      "duration_s": 9.547,
+      "pytest_summary": "2 passed in 8.26s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_causal_reduction.py",
+      "status": "passed",
+      "duration_s": 0.978,
+      "pytest_summary": "2 passed in 0.01s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_checkout_import_priority.py",
+      "status": "passed",
+      "duration_s": 3.922,
+      "pytest_summary": "1 passed in 2.76s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_cleanup_budget_boundary.py",
+      "status": "passed",
+      "duration_s": 0.951,
+      "pytest_summary": "1 passed in 0.01s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_cli_init.py",
+      "status": "passed",
+      "duration_s": 0.976,
+      "pytest_summary": "2 passed in 0.02s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_composed_repair.py",
+      "status": "passed",
+      "duration_s": 41.53,
+      "pytest_summary": "3 passed in 40.38s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_context_repair.py",
+      "status": "passed",
+      "duration_s": 1.104,
+      "pytest_summary": "6 passed in 0.02s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_contract_repairs.py",
+      "status": "passed",
+      "duration_s": 1.338,
+      "pytest_summary": "5 passed in 0.01s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_convention_repair.py",
+      "status": "passed",
+      "duration_s": 1.277,
+      "pytest_summary": "5 passed in 0.02s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_core.py",
+      "status": "passed",
+      "duration_s": 96.694,
+      "pytest_summary": "32 passed in 95.54s (0:01:35)"
+    },
+    {
+      "test_file": "tests/issue_engine/test_deadline_budget.py",
+      "status": "passed",
+      "duration_s": 2.086,
+      "pytest_summary": "1 passed in 0.84s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_delimiter_repair.py",
+      "status": "passed",
+      "duration_s": 21.299,
+      "pytest_summary": "4 passed in 20.24s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_external_holdout.py",
+      "status": "passed",
+      "duration_s": 1.034,
+      "pytest_summary": "6 passed in 0.03s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_local_repro_proxy_isolation.py",
+      "status": "passed",
+      "duration_s": 1.288,
+      "pytest_summary": "1 passed in 0.14s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_localization.py",
+      "status": "passed",
+      "duration_s": 35.838,
+      "pytest_summary": "9 passed in 34.83s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_native_triage.py",
+      "status": "passed",
+      "duration_s": 26.202,
+      "pytest_summary": "10 passed in 24.96s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_ownership_repair.py",
+      "status": "passed",
+      "duration_s": 1.274,
+      "pytest_summary": "2 passed in 0.01s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_reliability_research.py",
+      "status": "passed",
+      "duration_s": 8.277,
+      "pytest_summary": "17 passed in 6.92s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_review_export.py",
+      "status": "passed",
+      "duration_s": 29.598,
+      "pytest_summary": "3 passed in 28.54s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_shape_guard_repair.py",
+      "status": "passed",
+      "duration_s": 1.089,
+      "pytest_summary": "2 passed in 0.01s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_structural_operators.py",
+      "status": "passed",
+      "duration_s": 3.427,
+      "pytest_summary": "8 passed in 2.48s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v11_metamorphic.py",
+      "status": "passed",
+      "duration_s": 1.114,
+      "pytest_summary": "5 passed in 0.08s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v11_provenance.py",
+      "status": "passed",
+      "duration_s": 0.978,
+      "pytest_summary": "4 skipped in 0.01s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v12_dataflow.py",
+      "status": "passed",
+      "duration_s": 15.794,
+      "pytest_summary": "14 passed in 14.77s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v12_interprocedural.py",
+      "status": "passed",
+      "duration_s": 1.074,
+      "pytest_summary": "7 passed in 0.02s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v12_may_def_properties.py",
+      "status": "passed",
+      "duration_s": 1.012,
+      "pytest_summary": "37 passed in 0.05s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v12_oracle_audit.py",
+      "status": "passed",
+      "duration_s": 19.484,
+      "pytest_summary": "4 passed in 18.47s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v14_cancellation_safety.py",
+      "status": "passed",
+      "duration_s": 2.817,
+      "pytest_summary": "14 passed in 1.38s"
+    },
+    {
+      "test_file": "tests/issue_engine/test_v15_resource_protocol.py",
+      "status": "passed",
+      "duration_s": 1.52,
+      "pytest_summary": "16 passed in 0.29s"
+    },
+    {
+      "test_file": "tests/test_authority_and_evidence.py",
+      "status": "passed",
+      "duration_s": 2.436,
+      "pytest_summary": "15 passed in 1.23s"
+    },
+    {
+      "test_file": "tests/test_cli.py",
+      "status": "passed",
+      "duration_s": 1.441,
+      "pytest_summary": "3 passed in 0.33s"
+    },
+    {
+      "test_file": "tests/test_external_microbatch.py",
+      "status": "passed",
+      "duration_s": 1.15,
+      "pytest_summary": "11 passed in 0.02s"
+    },
+    {
+      "test_file": "tests/test_external_targets.py",
+      "status": "passed",
+      "duration_s": 3.057,
+      "pytest_summary": "11 passed in 1.93s"
+    },
+    {
+      "test_file": "tests/test_grain_preflight.py",
+      "status": "passed",
+      "duration_s": 1.197,
+      "pytest_summary": "11 passed, 6 skipped in 0.04s"
+    },
+    {
+      "test_file": "tests/test_guard_cegis.py",
+      "status": "passed",
+      "duration_s": 3.416,
+      "pytest_summary": "10 passed in 2.15s"
+    },
+    {
+      "test_file": "tests/test_incremental_external_issues.py",
+      "status": "passed",
+      "duration_s": 3.663,
+      "pytest_summary": "36 passed in 2.71s"
+    },
+    {
+      "test_file": "tests/test_join_semantic_provenance.py",
+      "status": "passed",
+      "duration_s": 2.527,
+      "pytest_summary": "14 passed in 0.99s"
+    },
+    {
+      "test_file": "tests/test_materialized_factorized.py",
+      "status": "passed",
+      "duration_s": 1.784,
+      "pytest_summary": "18 passed in 0.62s"
+    },
+    {
+      "test_file": "tests/test_pipeline_audit.py",
+      "status": "passed",
+      "duration_s": 1.313,
+      "pytest_summary": "17 passed in 0.26s"
+    },
+    {
+      "test_file": "tests/test_reduction.py",
+      "status": "passed",
+      "duration_s": 3.214,
+      "pytest_summary": "19 passed in 2.27s"
+    },
+    {
+      "test_file": "tests/test_replay_budget_contract.py",
+      "status": "passed",
+      "duration_s": 1.108,
+      "pytest_summary": "2 passed in 0.10s"
+    },
+    {
+      "test_file": "tests/test_resource_lifecycle.py",
+      "status": "passed",
+      "duration_s": 1.11,
+      "pytest_summary": "8 passed in 0.01s"
+    },
+    {
+      "test_file": "tests/test_semantic_provenance.py",
+      "status": "passed",
+      "duration_s": 2.8,
+      "pytest_summary": "28 passed in 1.35s"
+    },
+    {
+      "test_file": "tests/test_sql_review.py",
+      "status": "passed",
+      "duration_s": 2.925,
+      "pytest_summary": "15 passed in 1.87s"
+    }
+  ],
+  "caveats": [
+    "Ten skipped tests are not proved by this suite",
+    "No remote release or PR status inferred"
+  ]
+}

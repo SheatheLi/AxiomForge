@@ -1,0 +1,13 @@
+{
+  "scenario": "Illustrative alternate cleanup-path intervention planning (synthetic specifications; NOT live-runtime guarantee)",
+  "paths": [
+    ["guard_response", "guard_pool"],
+    ["guard_pool", "guard_connection"],
+    ["guard_response", "guard_connection"]
+  ],
+  "costs": {
+    "guard_response": 2.0,
+    "guard_pool": 4.0,
+    "guard_connection": 2.0
+  }
+}

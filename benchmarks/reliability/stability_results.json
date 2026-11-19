@@ -1,0 +1,262 @@
+{
+  "replications": 3,
+  "steps_per_variant": 4,
+  "fixed_schedule_not_random_sample": true,
+  "data": [
+    {
+      "replication": 1,
+      "strategies": [
+        {
+          "strategy": "baseline",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "baseline",
+          "mode": "double",
+          "max_active": 3,
+          "bad_snapshots": 3,
+          "blocked": 1,
+          "completed_clean": 0
+        },
+        {
+          "strategy": "shield-only",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "shield-only",
+          "mode": "double",
+          "max_active": 3,
+          "bad_snapshots": 3,
+          "blocked": 1,
+          "completed_clean": 0
+        },
+        {
+          "strategy": "rearm-after-cancellation",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "rearm-after-cancellation",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "defer-commit",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "defer-commit",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "singleflight-commit",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "singleflight-commit",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        }
+      ]
+    },
+    {
+      "replication": 2,
+      "strategies": [
+        {
+          "strategy": "baseline",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "baseline",
+          "mode": "double",
+          "max_active": 3,
+          "bad_snapshots": 3,
+          "blocked": 1,
+          "completed_clean": 0
+        },
+        {
+          "strategy": "shield-only",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "shield-only",
+          "mode": "double",
+          "max_active": 3,
+          "bad_snapshots": 3,
+          "blocked": 1,
+          "completed_clean": 0
+        },
+        {
+          "strategy": "rearm-after-cancellation",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "rearm-after-cancellation",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "defer-commit",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "defer-commit",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "singleflight-commit",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "singleflight-commit",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        }
+      ]
+    },
+    {
+      "replication": 3,
+      "strategies": [
+        {
+          "strategy": "baseline",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "baseline",
+          "mode": "double",
+          "max_active": 3,
+          "bad_snapshots": 3,
+          "blocked": 1,
+          "completed_clean": 0
+        },
+        {
+          "strategy": "shield-only",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "shield-only",
+          "mode": "double",
+          "max_active": 3,
+          "bad_snapshots": 3,
+          "blocked": 1,
+          "completed_clean": 0
+        },
+        {
+          "strategy": "rearm-after-cancellation",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "rearm-after-cancellation",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "defer-commit",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "defer-commit",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "singleflight-commit",
+          "mode": "single",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        },
+        {
+          "strategy": "singleflight-commit",
+          "mode": "double",
+          "max_active": 0,
+          "bad_snapshots": 0,
+          "blocked": 0,
+          "completed_clean": 4
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+--- a/httpcore/_async/http11.py
++++ b/httpcore/_async/http11.py
+@@ -344,8 +344,13 @@
+     async def aclose(self) -> None:
+         if not self._closed:
+             self._closed = True
+-            async with Trace("response_closed", logger, self._request):
+-                await self._connection._response_closed()
++            try:
++                async with Trace("response_closed", logger, self._request):
++                    await self._connection._response_closed()
++            except BaseException:
++                # Cleanup may be retried by a higher-level owner.
++                self._closed = False
++                raise
+ 
+ 
+ class AsyncHTTP11UpgradeStream(AsyncNetworkStream):

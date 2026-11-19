@@ -1,0 +1,8 @@
+{
+  "events": [
+    {"kind": "allocate", "resource": "dbapi:1", "owner": "connect-init:1"},
+    {"kind": "transfer", "resource": "dbapi:1", "owner": "pool:main"},
+    {"kind": "scope_finish", "scope": "connect-init:1"},
+    {"kind": "pool_observe", "pool": "main", "available": 1}
+  ]
+}

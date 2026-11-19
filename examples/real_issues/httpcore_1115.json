@@ -1,0 +1,21 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/encode/httpcore/issues/1115",
+  "checkout": "__PROVIDE_CHECKOUT__",
+  "reproduce": [
+    "${PYTHON}",
+    "-c",
+    "import asyncio\nfrom contextlib import suppress\nfrom httpcore._async.connection_pool import PoolByteStream\nclass Stream:\n    def __init__(self,interrupt):self.calls=0;self.interrupt=interrupt\n    async def aclose(self):\n        self.calls+=1\n        if self.interrupt and self.calls==1:raise asyncio.CancelledError()\nclass Lock:\n    def __enter__(self):return self\n    def __exit__(self,*args):return False\nclass Pool:\n    def __init__(self,request):self._requests=[request];self._optional_thread_lock=Lock();self.closures=0\n    def _assign_requests_to_connections(self):return []\n    async def _close_connections(self,connections):self.closures+=1\nasync def main():\n    req=object();pool=Pool(req);stream=Stream(True);wrapper=PoolByteStream(stream,req,pool)\n    with suppress(asyncio.CancelledError):await wrapper.aclose()\n    await wrapper.aclose()\n    if stream.calls!=2 or pool._requests:\n        raise AssertionError(\"ISSUE-1115-INTERRUPTED-CLEANUP\" )\nasyncio.run(main())\n"
+  ],
+  "control": [
+    "${PYTHON}",
+    "-c",
+    "import asyncio\nfrom contextlib import suppress\nfrom httpcore._async.connection_pool import PoolByteStream\nclass Stream:\n    def __init__(self,interrupt):self.calls=0;self.interrupt=interrupt\n    async def aclose(self):\n        self.calls+=1\n        if self.interrupt and self.calls==1:raise asyncio.CancelledError()\nclass Lock:\n    def __enter__(self):return self\n    def __exit__(self,*args):return False\nclass Pool:\n    def __init__(self,request):self._requests=[request];self._optional_thread_lock=Lock();self.closures=0\n    def _assign_requests_to_connections(self):return []\n    async def _close_connections(self,connections):self.closures+=1\nasync def main():\n    req=object();pool=Pool(req);stream=Stream(False);wrapper=PoolByteStream(stream,req,pool)\n    await asyncio.gather(wrapper.aclose(),wrapper.aclose())\n    await wrapper.aclose()\n    assert stream.calls==1 and not pool._requests\nasyncio.run(main())\n"
+  ],
+  "failure_fingerprint": "ISSUE-1115-INTERRUPTED-CLEANUP",
+  "editable_files": [
+    "httpcore/_async/connection_pool.py"
+  ],
+  "timeout_seconds": 15,
+  "repetitions": 2
+}

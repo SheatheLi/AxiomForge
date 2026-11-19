@@ -1,0 +1,33 @@
+{
+  "scope": "Synthetic SQLite fanout; same repro oracle, independent replay and 1-minimal verification, 3 input scales",
+  "rows": [
+    {
+      "orders": 60,
+      "source_rows": 180,
+      "hierarchical_calls": 50,
+      "greedy_calls": 181,
+      "rows_after": 3,
+      "replay": "REPLAY_VERIFIED",
+      "reduction_pct": 72.38
+    },
+    {
+      "orders": 120,
+      "source_rows": 360,
+      "hierarchical_calls": 58,
+      "greedy_calls": 361,
+      "rows_after": 3,
+      "replay": "REPLAY_VERIFIED",
+      "reduction_pct": 83.93
+    },
+    {
+      "orders": 180,
+      "source_rows": 540,
+      "hierarchical_calls": 58,
+      "greedy_calls": 541,
+      "rows_after": 3,
+      "replay": "REPLAY_VERIFIED",
+      "reduction_pct": 89.28
+    }
+  ],
+  "limits": "Oracle calls deterministic; latency depends on OS & file system. Greedy is a simple baseline, not a mature external program analysis system."
+}

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "axiomforge"
+version = "1.6.0"
+description = "Python fault injection and cross-layer resource lifecycle protocol verification, with legacy analysis tools"
+requires-python = ">=3.10"
+authors = [{name="Independent engineering portfolio"}]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8", "coverage>=7"]
+reliability = ["httpx>=0.28,<0.29", "httpcore>=1.0,<1.1", "anyio>=4,<5"]
+data = ["numpy>=1.26,<3", "pandas>=2.2,<3", "SQLAlchemy>=2.0,<2.1"]
+research = ["numpy>=1.26,<3", "pandas>=2.2,<3", "SQLAlchemy>=2.0,<2.1", "scipy>=1.11", "sympy>=1.12"]
+
+[project.scripts]
+axiomforge = "axiomforge.cli:main"
+axiomforge-semantics = "axiomforge.semantics.cli:cli"
+axiomforge-audit = "axiomforge.semantics.pipeline_cli:main"
+axiomforge-factorized = "axiomforge.semantics.factorized_cli:main"
+axiomforge-sql = "axiomforge.semantics.sql_cli:main"
+axiomforge-grain = "axiomforge.semantics.grain_preflight:main"
+axiomforge-grain-verify = "axiomforge.semantics.grain_verify:main"
+axiomforge-review = "axiomforge.sql_review:main"
+axiomforge-reduce = "axiomforge.reduction:main"
+axiomforge-incremental = "axiomforge.incremental:main"
+axiomforge-issue-witness = "axiomforge.incremental_reduction:main"
+axiomforge-microbatch = "axiomforge.microbatch:main"
+axiomforge-issue = "axiomforge.issue_engine.cli:main"
+axiomforge-cancel = "axiomforge.issue_engine.cancel_cli:main"
+axiomforge-protocol = "axiomforge.issue_engine.protocol_cli:main"
+axiomforge-reliability = "axiomforge.issue_engine.reliability_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+markers = ["slow: live network loopback / real library regression"]
+
+# Standalone executable for real CSV/warehouse extracts.

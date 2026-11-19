@@ -1,0 +1,21 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/sqlalchemy/sqlalchemy/issues/13548",
+  "checkout": "__PROVIDE_CHECKOUT__",
+  "reproduce": [
+    "${PYTHON}",
+    "-c",
+    "import sys\nsys.path.insert(0,'.')\nfrom sqlalchemy import create_engine,event,text\n\ndef trial(stage):\n    engine=create_engine(\"sqlite+pysqlite:///:memory:\",pool_size=1)\n    pool=engine.pool\n    original_create=pool._invoke_creator\n    original_close=pool._close_connection\n    created=[];closed=[];ids={}\n    def creator(record):\n        conn=original_create(record)\n        ident=len(created)+1\n        created.append(ident);ids[id(conn)]=ident\n        return conn\n    def closer(conn,**kw):\n        closed.append(ids.get(id(conn),-1))\n        return original_close(conn,**kw)\n    pool._invoke_creator=creator\n    pool._close_connection=closer\n    def fail(*args):raise RuntimeError(\"injected initialization error\")\n    if stage!=\"none\":event.listen(engine,stage,fail)\n    errors=0\n    try:\n        for _ in range(3):\n            try:\n                with engine.connect() as c:c.execute(text(\"SELECT 1\"))\n            except RuntimeError as e:\n                if str(e)!=\"injected initialization error\":raise\n                errors+=1\n    finally:engine.dispose()\n    return created,closed,errors\nfor mode in (\"first_connect\",\"connect\"):\n    created,closed,errors=trial(mode)\n    if errors!=3 or not set(created).issubset(set(closed)):\n        raise AssertionError(\"ISSUE-13548-POOL-EVENT-CLEANUP\")\n"
+  ],
+  "control": [
+    "${PYTHON}",
+    "-c",
+    "import sys\nsys.path.insert(0,'.')\nfrom sqlalchemy import create_engine,event,text\n\ndef trial(stage):\n    engine=create_engine(\"sqlite+pysqlite:///:memory:\",pool_size=1)\n    pool=engine.pool\n    original_create=pool._invoke_creator\n    original_close=pool._close_connection\n    created=[];closed=[];ids={}\n    def creator(record):\n        conn=original_create(record)\n        ident=len(created)+1\n        created.append(ident);ids[id(conn)]=ident\n        return conn\n    def closer(conn,**kw):\n        closed.append(ids.get(id(conn),-1))\n        return original_close(conn,**kw)\n    pool._invoke_creator=creator\n    pool._close_connection=closer\n    def fail(*args):raise RuntimeError(\"injected initialization error\")\n    if stage!=\"none\":event.listen(engine,stage,fail)\n    errors=0\n    try:\n        for _ in range(3):\n            try:\n                with engine.connect() as c:c.execute(text(\"SELECT 1\"))\n            except RuntimeError as e:\n                if str(e)!=\"injected initialization error\":raise\n                errors+=1\n    finally:engine.dispose()\n    return created,closed,errors\ncreated,closed,errors=trial(\"none\")\nassert created and errors==0\n"
+  ],
+  "failure_fingerprint": "ISSUE-13548-POOL-EVENT-CLEANUP",
+  "editable_files": [
+    "sqlalchemy/pool/base.py"
+  ],
+  "timeout_seconds": 20,
+  "repetitions": 1
+}

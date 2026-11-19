@@ -1,0 +1,76 @@
+{
+  "round": 8,
+  "project": "AxiomForge",
+  "delivery": "actual-failure-triage",
+  "target_url": "https://github.com/encode/httpx/issues/3782",
+  "verified_current_run": {
+    "target_versions": {
+      "baseline_runner_sha256": "ecd228dbbf63fee6ef55afbdac21b18709b142135a013e5cf0b886f42c2c26c0",
+      "httpcore": "1.0.9",
+      "httpcore_http11_sha256": "faa33d6d5ecf8d2405e6fc6cdfbf9e5173881706c88cf7196cd962b97f53b41c",
+      "httpx": "0.28.1",
+      "patched_runner_sha256": "f7ab30f617a3f914b16822a38d34aeada9a04abb6b33292059e32d06f329c087",
+      "python": "3.13.5"
+    },
+    "native_original_reproduced": true,
+    "minimum_repetitions": 4,
+    "replay_result": "REPRODUCED",
+    "native_independent_confirmations": [
+      {
+        "evidence": "raw/confirm_1.json",
+        "present": true
+      },
+      {
+        "evidence": "raw/confirm_2.json",
+        "present": true
+      }
+    ],
+    "source_patch_independent_process": true,
+    "patched_repair_observation": {
+      "candidate_diff_sha256": "8daac06e2ac968d1580683819177c3dd9564ad19b113380bde73cfddb43dc45c",
+      "double_active": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "double_blocked": 0,
+      "eliminated_observed_symptom": true,
+      "scope": "Throwaway patched HTTPcore 1.0.9, independent Python process",
+      "warning": "Only this local TCP schedule was exercised; no Trio proof or upstream approval"
+    }
+  },
+  "tests": {
+    "historical_targeted": {
+      "status": "PASS",
+      "passed": 31,
+      "deselected": 2
+    },
+    "combined_targeted_non_slow": {
+      "status": "PASS",
+      "passed": 40,
+      "deselected": 3
+    },
+    "new_feature_total": {
+      "status": "PASS",
+      "passed": 10,
+      "integration_real_httpx_tcp": 1,
+      "duration_seconds": 26.66
+    },
+    "historical_full_non_slow": {
+      "status": "TIMEOUT",
+      "timeout_seconds": 130,
+      "completed_tests_before_timeout": 42,
+      "total_collected": 435,
+      "note": "Not a passing or complete suite, historical long-running test blocks global verification"
+    }
+  },
+  "scope": {
+    "round8_core_chain": "PASS",
+    "third_party_eight_unique_native_fixes": "NOT_IN_SCOPE_ROUND9",
+    "unseen_issues_generalization": "NOT_TESTED",
+    "upstream_merged": "NOT_CLAIMED",
+    "owner_hands_on_takeover": "NOT_TESTED"
+  },
+  "warning": "Local measured data and source checkout, not a universal correctness proof or external Issue fix"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "optimal",
+  "selected": [
+    "guard_connection",
+    "guard_response"
+  ],
+  "cost": 4.0,
+  "baseline_cost": 8.0,
+  "constraints": 3,
+  "solver": "scipy.optimize.milp (HiGHS)",
+  "optimal": true,
+  "scope": "Exact weighted hitting set for the supplied paths only; no runtime soundness guarantee"
+}

@@ -1,0 +1,536 @@
+{
+  "study": "cross-layer-obligation-counterexample",
+  "cases": {
+    "connect-failure": {
+      "case": "connect-failure",
+      "library": "SQLAlchemy",
+      "version": "2.0.50",
+      "issue": "https://github.com/sqlalchemy/sqlalchemy/issues/13548",
+      "attempts": 5,
+      "failures": 5,
+      "created": 5,
+      "formal_pool_close_calls": 0,
+      "manual_dbapi_close_calls": 0,
+      "legacy_created_minus_retired_before_dispose": 5,
+      "protocol_before_dispose": {
+        "schema": "axiomforge.resource-protocol.v1",
+        "events": 11,
+        "active_resources": 5,
+        "findings": [
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:1",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:1",
+            "causal_witness": [
+              {
+                "seq": 0,
+                "kind": "allocate",
+                "resource": "dbapi:1",
+                "owner": "connect-init:1",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 1,
+                "kind": "scope_abort",
+                "scope": "connect-init:1",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:2",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:2",
+            "causal_witness": [
+              {
+                "seq": 2,
+                "kind": "allocate",
+                "resource": "dbapi:2",
+                "owner": "connect-init:2",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 3,
+                "kind": "scope_abort",
+                "scope": "connect-init:2",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:3",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:3",
+            "causal_witness": [
+              {
+                "seq": 4,
+                "kind": "allocate",
+                "resource": "dbapi:3",
+                "owner": "connect-init:3",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 5,
+                "kind": "scope_abort",
+                "scope": "connect-init:3",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:4",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:4",
+            "causal_witness": [
+              {
+                "seq": 6,
+                "kind": "allocate",
+                "resource": "dbapi:4",
+                "owner": "connect-init:4",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 7,
+                "kind": "scope_abort",
+                "scope": "connect-init:4",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:5",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:5",
+            "causal_witness": [
+              {
+                "seq": 8,
+                "kind": "allocate",
+                "resource": "dbapi:5",
+                "owner": "connect-init:5",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 9,
+                "kind": "scope_abort",
+                "scope": "connect-init:5",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          }
+        ],
+        "finding_kinds": [
+          "ORPHANED_RESOURCE"
+        ],
+        "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+      },
+      "protocol_after_dispose": {
+        "schema": "axiomforge.resource-protocol.v1",
+        "events": 11,
+        "active_resources": 5,
+        "findings": [
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:1",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:1",
+            "causal_witness": [
+              {
+                "seq": 0,
+                "kind": "allocate",
+                "resource": "dbapi:1",
+                "owner": "connect-init:1",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 1,
+                "kind": "scope_abort",
+                "scope": "connect-init:1",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:2",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:2",
+            "causal_witness": [
+              {
+                "seq": 2,
+                "kind": "allocate",
+                "resource": "dbapi:2",
+                "owner": "connect-init:2",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 3,
+                "kind": "scope_abort",
+                "scope": "connect-init:2",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:3",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:3",
+            "causal_witness": [
+              {
+                "seq": 4,
+                "kind": "allocate",
+                "resource": "dbapi:3",
+                "owner": "connect-init:3",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 5,
+                "kind": "scope_abort",
+                "scope": "connect-init:3",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:4",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:4",
+            "causal_witness": [
+              {
+                "seq": 6,
+                "kind": "allocate",
+                "resource": "dbapi:4",
+                "owner": "connect-init:4",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 7,
+                "kind": "scope_abort",
+                "scope": "connect-init:4",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          },
+          {
+            "kind": "ORPHANED_RESOURCE",
+            "resource": "dbapi:5",
+            "generation": 1,
+            "at_event": 11,
+            "message": "Open resource retained by aborted scope connect-init:5",
+            "causal_witness": [
+              {
+                "seq": 8,
+                "kind": "allocate",
+                "resource": "dbapi:5",
+                "owner": "connect-init:5",
+                "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+              },
+              {
+                "seq": 9,
+                "kind": "scope_abort",
+                "scope": "connect-init:5",
+                "note": "Real SQLAlchemy connect-event exception"
+              }
+            ]
+          }
+        ],
+        "finding_kinds": [
+          "ORPHANED_RESOURCE"
+        ],
+        "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+      },
+      "events": [
+        {
+          "seq": 0,
+          "kind": "allocate",
+          "resource": "dbapi:1",
+          "owner": "connect-init:1",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 1,
+          "kind": "scope_abort",
+          "scope": "connect-init:1",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 2,
+          "kind": "allocate",
+          "resource": "dbapi:2",
+          "owner": "connect-init:2",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 3,
+          "kind": "scope_abort",
+          "scope": "connect-init:2",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 4,
+          "kind": "allocate",
+          "resource": "dbapi:3",
+          "owner": "connect-init:3",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 5,
+          "kind": "scope_abort",
+          "scope": "connect-init:3",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 6,
+          "kind": "allocate",
+          "resource": "dbapi:4",
+          "owner": "connect-init:4",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 7,
+          "kind": "scope_abort",
+          "scope": "connect-init:4",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 8,
+          "kind": "allocate",
+          "resource": "dbapi:5",
+          "owner": "connect-init:5",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 9,
+          "kind": "scope_abort",
+          "scope": "connect-init:5",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 10,
+          "kind": "pool_observe",
+          "pool": "main",
+          "available": 1,
+          "note": "Logical pool capacity is not a physical close proof"
+        }
+      ],
+      "limitation": "Uses installed QueuePool and real connect listener with SQLite; physical server sessions not observed."
+    },
+    "manual-close": {
+      "case": "manual-close",
+      "library": "SQLAlchemy",
+      "version": "2.0.50",
+      "issue": "https://github.com/sqlalchemy/sqlalchemy/issues/13548",
+      "attempts": 5,
+      "failures": 5,
+      "created": 5,
+      "formal_pool_close_calls": 0,
+      "manual_dbapi_close_calls": 5,
+      "legacy_created_minus_retired_before_dispose": 0,
+      "protocol_before_dispose": {
+        "schema": "axiomforge.resource-protocol.v1",
+        "events": 16,
+        "active_resources": 0,
+        "findings": [],
+        "finding_kinds": [],
+        "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+      },
+      "protocol_after_dispose": {
+        "schema": "axiomforge.resource-protocol.v1",
+        "events": 16,
+        "active_resources": 0,
+        "findings": [],
+        "finding_kinds": [],
+        "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+      },
+      "events": [
+        {
+          "seq": 0,
+          "kind": "allocate",
+          "resource": "dbapi:1",
+          "owner": "connect-init:1",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 1,
+          "kind": "retire",
+          "resource": "dbapi:1",
+          "note": "Application close during connect event"
+        },
+        {
+          "seq": 2,
+          "kind": "scope_abort",
+          "scope": "connect-init:1",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 3,
+          "kind": "allocate",
+          "resource": "dbapi:2",
+          "owner": "connect-init:2",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 4,
+          "kind": "retire",
+          "resource": "dbapi:2",
+          "note": "Application close during connect event"
+        },
+        {
+          "seq": 5,
+          "kind": "scope_abort",
+          "scope": "connect-init:2",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 6,
+          "kind": "allocate",
+          "resource": "dbapi:3",
+          "owner": "connect-init:3",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 7,
+          "kind": "retire",
+          "resource": "dbapi:3",
+          "note": "Application close during connect event"
+        },
+        {
+          "seq": 8,
+          "kind": "scope_abort",
+          "scope": "connect-init:3",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 9,
+          "kind": "allocate",
+          "resource": "dbapi:4",
+          "owner": "connect-init:4",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 10,
+          "kind": "retire",
+          "resource": "dbapi:4",
+          "note": "Application close during connect event"
+        },
+        {
+          "seq": 11,
+          "kind": "scope_abort",
+          "scope": "connect-init:4",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 12,
+          "kind": "allocate",
+          "resource": "dbapi:5",
+          "owner": "connect-init:5",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 13,
+          "kind": "retire",
+          "resource": "dbapi:5",
+          "note": "Application close during connect event"
+        },
+        {
+          "seq": 14,
+          "kind": "scope_abort",
+          "scope": "connect-init:5",
+          "note": "Real SQLAlchemy connect-event exception"
+        },
+        {
+          "seq": 15,
+          "kind": "pool_observe",
+          "pool": "main",
+          "available": 1,
+          "note": "Logical pool capacity is not a physical close proof"
+        }
+      ],
+      "limitation": "Uses installed QueuePool and real connect listener with SQLite; physical server sessions not observed."
+    },
+    "healthy": {
+      "case": "healthy",
+      "library": "SQLAlchemy",
+      "version": "2.0.50",
+      "issue": "https://github.com/sqlalchemy/sqlalchemy/issues/13548",
+      "attempts": 5,
+      "failures": 0,
+      "created": 1,
+      "formal_pool_close_calls": 1,
+      "manual_dbapi_close_calls": 0,
+      "legacy_created_minus_retired_before_dispose": 1,
+      "protocol_before_dispose": {
+        "schema": "axiomforge.resource-protocol.v1",
+        "events": 4,
+        "active_resources": 1,
+        "findings": [],
+        "finding_kinds": [],
+        "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+      },
+      "protocol_after_dispose": {
+        "schema": "axiomforge.resource-protocol.v1",
+        "events": 5,
+        "active_resources": 0,
+        "findings": [],
+        "finding_kinds": [],
+        "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+      },
+      "events": [
+        {
+          "seq": 0,
+          "kind": "allocate",
+          "resource": "dbapi:1",
+          "owner": "connect-init:1",
+          "note": "SQLAlchemy _invoke_creator returned DBAPI connection"
+        },
+        {
+          "seq": 1,
+          "kind": "transfer",
+          "resource": "dbapi:1",
+          "owner": "pool:main",
+          "note": "Connected resource owned by live QueuePool"
+        },
+        {
+          "seq": 2,
+          "kind": "scope_finish",
+          "scope": "connect-init:1"
+        },
+        {
+          "seq": 3,
+          "kind": "pool_observe",
+          "pool": "main",
+          "available": 1,
+          "note": "Logical pool capacity is not a physical close proof"
+        },
+        {
+          "seq": 4,
+          "kind": "retire",
+          "resource": "dbapi:1",
+          "note": "SQLAlchemy _close_connection invoked"
+        }
+      ],
+      "limitation": "Uses installed QueuePool and real connect listener with SQLite; physical server sessions not observed."
+    }
+  },
+  "limitations": [
+    "Installed pre-fix version, not new upstream defect",
+    "SQLite driver, not remote sessions",
+    "Healthy resources legitimately remain OPEN in pool until dispose",
+    "Not a comparative state-of-art tool benchmark"
+  ]
+}

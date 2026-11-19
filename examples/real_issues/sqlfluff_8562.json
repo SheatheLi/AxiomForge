@@ -1,0 +1,21 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/sqlfluff/sqlfluff/issues/8562",
+  "checkout": "__PROVIDE_CHECKOUT__",
+  "reproduce": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import fix,lint;from sqlfluff.core import FluffConfig\nq='SELECT CASE WHEN x = 1 THEN 2 ELSE /* keep this comment */ NULL END FROM t'\nout=fix(q,dialect=\"ansi\",rules=[\"ST01\"])\nif \"keep this comment\" not in out:raise AssertionError(\"ISSUE-8562-SILENT-COMMENT-LOSS\")\n"
+  ],
+  "control": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import fix,lint;from sqlfluff.core import FluffConfig\nq=\"SELECT CASE WHEN x = 1 THEN 2 ELSE NULL END FROM t\"\nout=fix(q,dialect=\"ansi\",rules=[\"ST01\"])\nassert \"ELSE NULL\" not in out.upper()\n"
+  ],
+  "failure_fingerprint": "ISSUE-8562-SILENT-COMMENT-LOSS",
+  "editable_files": [
+    "src/sqlfluff/rules/structure/ST01.py"
+  ],
+  "timeout_seconds": 25,
+  "repetitions": 1
+}

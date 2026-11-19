@@ -1,0 +1,18 @@
+{
+  "schema": "axiomforge.ablation.v1",
+  "status": "AUDITED",
+  "issue_url": "https://github.com/sqlfluff/sqlfluff/issues/8709",
+  "original_patch_sha256": "3d5be03b03df64665668b6ba70feec5cca2e69069a20f0c6a44e139d985281da",
+  "hunk_count": 1,
+  "hunks": [
+    {
+      "index": 0,
+      "file": "src/sqlfluff/rules/structure/ST09.py",
+      "result": "SOLE_HUNK",
+      "explanation": "the original baseline fails; removal is equivalent to no patch"
+    }
+  ],
+  "evidence_relative_necessary": true,
+  "meaning": "necessary only under the declared executable tests; not semantic or global minimality",
+  "seconds": 11.812
+}

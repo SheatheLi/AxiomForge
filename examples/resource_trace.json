@@ -1,0 +1,6 @@
+{"clock_id":"steady","events":[
+ {"action":"BORROW","resource_id":"borrow-42","timestamp":0.0},
+ {"action":"CLOSE_BEGIN","resource_id":"borrow-42","timestamp":0.2},
+ {"action":"CLOSE_CANCEL","resource_id":"borrow-42","timestamp":0.3},
+ {"action":"POOL_TERMINATED","timestamp":0.4}
+]}

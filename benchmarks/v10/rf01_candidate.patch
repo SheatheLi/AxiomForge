@@ -1,0 +1,12 @@
+diff --git a/src/sqlfluff/rules/references/RF01.py b/src/sqlfluff/rules/references/RF01.py
+--- a/src/sqlfluff/rules/references/RF01.py
++++ b/src/sqlfluff/rules/references/RF01.py
+@@ -112,6 +112,8 @@
+         result: list[tuple[str, ...]] = []
+         if alias_info.aliased:
+             result.append((alias_info.ref_str,))
++            if alias_info.segment and alias_info.segment.is_type("naked_identifier"):
++                result.append((alias_info.ref_str.upper(),))
+         if alias_info.object_reference:
+             result += self._table_ref_as_tuple(
+                 cast(ObjectReferenceSegment, alias_info.object_reference), dialect

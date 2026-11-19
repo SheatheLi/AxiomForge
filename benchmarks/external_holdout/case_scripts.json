@@ -1,0 +1,74 @@
+[
+  {
+    "id": "sqlfluff-8709",
+    "repo": "sqlfluff",
+    "issue": 8709,
+    "file": "src/sqlfluff/rules/structure/ST09.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;x=fix('SELECT * FROM a JOIN b ON b.y <=> a.x;',dialect='mysql',rules=['ST09']);assert '>=>' not in x, 'HOLDOUT-8709-OPERATOR-CORRUPTION'; assert '<=>' in x",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;x=fix('SELECT * FROM a JOIN b ON b.y <=> a.x;',dialect='sparksql',rules=['ST09']);assert '<=>' in x and '>=>' not in x",
+    "fp": "HOLDOUT-8709-OPERATOR-CORRUPTION"
+  },
+  {
+    "id": "sqlfluff-8444",
+    "repo": "sqlfluff",
+    "issue": 8444,
+    "file": "src/sqlfluff/dialects/dialect_ansi.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert any(x['code']=='PRS' for x in lint('SELECT SELECT 1;',dialect='ansi')), 'HOLDOUT-8444-INVALID-NESTED-SELECT' ",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='PRS' for x in lint('SELECT (SELECT 1);',dialect='ansi'))",
+    "fp": "HOLDOUT-8444-INVALID-NESTED-SELECT"
+  },
+  {
+    "id": "sqlfluff-8589",
+    "repo": "sqlfluff",
+    "issue": 8589,
+    "file": "src/sqlfluff/dialects/dialect_ansi.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert any(x['code']=='PRS' for x in lint('CREATE TABLE t (a DECIMAL(10, 2, 3));',dialect='ansi')), 'HOLDOUT-8589-DATATYPE-ARITY' ",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='PRS' for x in lint('CREATE TABLE t (a DECIMAL(10, 2));',dialect='ansi'))",
+    "fp": "HOLDOUT-8589-DATATYPE-ARITY"
+  },
+  {
+    "id": "sqlfluff-8594",
+    "repo": "sqlfluff",
+    "issue": 8594,
+    "file": "src/sqlfluff/rules/references/RF01.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='RF01' for x in lint('SELECT CI.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;',dialect='ansi',rules=['RF01'])), 'HOLDOUT-8594-CASEFOLD' ",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='RF01' for x in lint('SELECT ci.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;',dialect='ansi',rules=['RF01']))",
+    "fp": "HOLDOUT-8594-CASEFOLD"
+  },
+  {
+    "id": "sqlfluff-8373",
+    "repo": "sqlfluff",
+    "issue": 8373,
+    "file": "src/sqlfluff/dialects/dialect_oracle.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='PRS' for x in lint('CREATE VIEW myview AS select 1 / 100 as z from dual;',dialect='oracle')), 'HOLDOUT-8373-ORACLE-DIVISION' ",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='PRS' for x in lint('CREATE VIEW myview AS select (1/100) as z from dual;',dialect='oracle'))",
+    "fp": "HOLDOUT-8373-ORACLE-DIVISION"
+  },
+  {
+    "id": "sqlfluff-8707",
+    "repo": "sqlfluff",
+    "issue": 8707,
+    "file": "src/sqlfluff/dialects/dialect_clickhouse.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='PRS' for x in lint('ALTER TABLE example ADD COLUMN a UInt8, ADD COLUMN b UInt8;',dialect='clickhouse')), 'HOLDOUT-8707-CLICKHOUSE-ALTER' ",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlfluff import lint,fix;assert not any(x['code']=='PRS' for x in lint('ALTER TABLE example ADD COLUMN a UInt8;',dialect='clickhouse'))",
+    "fp": "HOLDOUT-8707-CLICKHOUSE-ALTER"
+  },
+  {
+    "id": "sqlalchemy-13637",
+    "repo": "sqlalchemy",
+    "issue": 13637,
+    "file": "sqlalchemy/dialects/postgresql/base.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");from sqlalchemy.engine import make_url;from sqlalchemy.dialects.postgresql.base import PGDialect\ntry:\n x=PGDialect()._split_multihost_from_url(make_url('postgresql://u:p@/app?host=[2001:db8::1]:5432&host=[2001:db8::2]:5433'))\nexcept ValueError as exc:\n raise AssertionError('HOLDOUT-13637-BRACKETED-IPV6') from exc\nassert x[0] and x[1], 'HOLDOUT-13637-BRACKETED-IPV6'\n",
+    "control": "import sys;sys.path.insert(0,\"src\");from sqlalchemy.engine import make_url;from sqlalchemy.dialects.postgresql.base import PGDialect\nx=PGDialect()._split_multihost_from_url(make_url('postgresql://u:p@/app?host=192.0.2.1:5432&host=192.0.2.2:5433'))\nassert x[0] and x[1]\n",
+    "fp": "HOLDOUT-13637-BRACKETED-IPV6"
+  },
+  {
+    "id": "httpcore-1110",
+    "repo": "httpcore",
+    "issue": 1110,
+    "file": "httpcore/_async/connection_pool.py",
+    "repro": "import sys;sys.path.insert(0,\"src\");import types,sys\nsys.modules['socksio']=types.ModuleType('socksio')\nfrom httpcore._async.connection_pool import AsyncConnectionPool,AsyncPoolRequest\nfrom httpcore._models import Request\nclass Fake:\n def __init__(self):self.closed=False\n def can_handle_request(self,origin):return True\n def is_available(self):return True\n def is_idle(self):return True\n def is_closed(self):return self.closed\n def has_expired(self):return False\n async def aclose(self):self.closed=True\np=AsyncConnectionPool(max_connections=2,max_keepalive_connections=1)\na,b=Fake(),Fake()\np._connections=[a]\nr=AsyncPoolRequest(Request(b'GET',b'http://example.com/'))\np._requests=[r]\np._assign_requests_to_connections()\nassert not r.is_queued()\np._connections.append(b)\nclosing=p._assign_requests_to_connections()\nassert a not in closing and a in p.connections, 'HOLDOUT-1110-CLOSES-ASSIGNED'\n",
+    "control": "import sys;sys.path.insert(0,\"src\");import types,sys\nsys.modules['socksio']=types.ModuleType('socksio')\nfrom httpcore._async.connection_pool import AsyncConnectionPool,AsyncPoolRequest\nfrom httpcore._models import Request\nclass Fake:\n def can_handle_request(self,origin):return True\n def is_available(self):return True\n def is_idle(self):return True\n def is_closed(self):return False\n def has_expired(self):return False\np=AsyncConnectionPool(max_connections=2,max_keepalive_connections=2)\na,b=Fake(),Fake();p._connections=[a]\nr=AsyncPoolRequest(Request(b'GET',b'http://example.com/'));p._requests=[r]\np._assign_requests_to_connections()\nassert not r.is_queued()\np._connections.append(b)\nassert a not in p._assign_requests_to_connections()\n",
+    "fp": "HOLDOUT-1110-CLOSES-ASSIGNED"
+  }
+]

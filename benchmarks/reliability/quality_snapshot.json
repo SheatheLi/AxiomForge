@@ -1,0 +1,35 @@
+{
+  "project": "AxiomForge",
+  "version": "1.6.0",
+  "evidence_class": "fixed-version local engineering reproduction",
+  "live": {
+    "baseline_double_active": [
+      1,
+      2,
+      3
+    ],
+    "baseline_fourth_timeout": true,
+    "shield_only_fourth_timeout": true,
+    "repair_candidate_4_step_active": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "repair_candidates": [
+      "rearm-after-cancellation",
+      "defer-commit",
+      "singleflight-commit"
+    ]
+  },
+  "repeat_experiments": 3,
+  "independent_patched_source_process": true,
+  "sqlalchemy_orphan_event_count": 5,
+  "boundaries": [
+    "no upstream PR",
+    "not a novel formal algorithm",
+    "no industrial repair success rate",
+    "not a multi-backend production patch",
+    "historical full regression not confirmed"
+  ]
+}

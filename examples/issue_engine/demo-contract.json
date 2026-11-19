@@ -1,0 +1,11 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/example/demo/issues/1",
+  "checkout": "demo_project",
+  "reproduce": ["${PYTHON}", "repro.py"],
+  "control": ["${PYTHON}", "control.py"],
+  "failure_fingerprint": "DEMO-SPECIFIC-INCORRECT-CALCULATION",
+  "editable_files": ["calculation.py"],
+  "timeout_seconds": 10,
+  "repetitions": 2
+}

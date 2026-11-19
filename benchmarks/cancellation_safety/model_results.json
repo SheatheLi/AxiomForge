@@ -1,0 +1,623 @@
+{
+  "historical_cancel_bug_model": {
+    "schema": "axiomforge.cancel-exploration.v1",
+    "method": "bounded-await-site-cancellation",
+    "baseline": {
+      "site": null,
+      "status": "OK",
+      "gate_reached": false,
+      "trace": [
+        "pool_resource_model.py:Pool.request:12:8:0",
+        "pool_resource_model.py:Pool.request:15:12:1",
+        "pool_resource_model.py:Pool.request:16:12:2"
+      ],
+      "observed": {
+        "held": [],
+        "violations": [],
+        "history": [
+          [
+            "acquire",
+            "connection-permit"
+          ],
+          [
+            "release",
+            "connection-permit"
+          ]
+        ]
+      },
+      "invariant_pass": true,
+      "error": null,
+      "recovery_status": "NOT_CONFIGURED"
+    },
+    "eligible_sites": 3,
+    "tested_sites": 3,
+    "experiments": [
+      {
+        "site": "pool_resource_model.py:Pool.request:12:8:0",
+        "status": "CANCELLED",
+        "gate_reached": true,
+        "trace": [
+          "pool_resource_model.py:Pool.request:12:8:0",
+          "pool_resource_model.py:Pool.request:15:12:1"
+        ],
+        "observed": {
+          "held": [
+            "connection-permit"
+          ],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "connection-permit"
+            ]
+          ]
+        },
+        "invariant_pass": false,
+        "error": null,
+        "recovery_status": "BLOCKED",
+        "occurrence": 1
+      },
+      {
+        "site": "pool_resource_model.py:Pool.request:15:12:1",
+        "status": "CANCELLED",
+        "gate_reached": true,
+        "trace": [
+          "pool_resource_model.py:Pool.request:12:8:0",
+          "pool_resource_model.py:Pool.request:15:12:1"
+        ],
+        "observed": {
+          "held": [
+            "connection-permit"
+          ],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "connection-permit"
+            ]
+          ]
+        },
+        "invariant_pass": false,
+        "error": null,
+        "recovery_status": "BLOCKED",
+        "occurrence": 1
+      },
+      {
+        "site": "pool_resource_model.py:Pool.request:16:12:2",
+        "status": "CANCELLED",
+        "gate_reached": true,
+        "trace": [
+          "pool_resource_model.py:Pool.request:12:8:0",
+          "pool_resource_model.py:Pool.request:15:12:1",
+          "pool_resource_model.py:Pool.request:16:12:2"
+        ],
+        "observed": {
+          "held": [
+            "connection-permit"
+          ],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "connection-permit"
+            ]
+          ]
+        },
+        "invariant_pass": false,
+        "error": null,
+        "recovery_status": "BLOCKED",
+        "occurrence": 1
+      }
+    ],
+    "violations": 3,
+    "unknown_results": 0,
+    "first_counterexample": {
+      "site": "pool_resource_model.py:Pool.request:12:8:0",
+      "status": "CANCELLED",
+      "gate_reached": true,
+      "trace": [
+        "pool_resource_model.py:Pool.request:12:8:0",
+        "pool_resource_model.py:Pool.request:15:12:1"
+      ],
+      "observed": {
+        "held": [
+          "connection-permit"
+        ],
+        "violations": [],
+        "history": [
+          [
+            "acquire",
+            "connection-permit"
+          ]
+        ]
+      },
+      "invariant_pass": false,
+      "error": null,
+      "recovery_status": "BLOCKED",
+      "occurrence": 1
+    },
+    "sites": [
+      {
+        "id": "pool_resource_model.py:Pool.request:12:8:0",
+        "function": "Pool.request",
+        "line": 12,
+        "column": 8
+      },
+      {
+        "id": "pool_resource_model.py:Pool.request:15:12:1",
+        "function": "Pool.request",
+        "line": 15,
+        "column": 12
+      },
+      {
+        "id": "pool_resource_model.py:Pool.request:16:12:2",
+        "function": "Pool.request",
+        "line": 16,
+        "column": 12
+      }
+    ],
+    "scope": "explicit await only; reachable baseline paths; cancellation does not prove all interleavings",
+    "elapsed_wall_seconds": 0.752132
+  },
+  "fixed_cleanup_model": {
+    "schema": "axiomforge.cancel-exploration.v1",
+    "method": "bounded-await-site-cancellation",
+    "baseline": {
+      "site": null,
+      "status": "OK",
+      "gate_reached": false,
+      "trace": [
+        "pool_resource_model.py:Pool.request:12:8:0",
+        "pool_resource_model.py:Pool.request:15:12:1",
+        "pool_resource_model.py:Pool.request:16:12:2"
+      ],
+      "observed": {
+        "held": [],
+        "violations": [],
+        "history": [
+          [
+            "acquire",
+            "connection-permit"
+          ],
+          [
+            "release",
+            "connection-permit"
+          ]
+        ]
+      },
+      "invariant_pass": true,
+      "error": null,
+      "recovery_status": "NOT_CONFIGURED"
+    },
+    "eligible_sites": 3,
+    "tested_sites": 3,
+    "experiments": [
+      {
+        "site": "pool_resource_model.py:Pool.request:12:8:0",
+        "status": "CANCELLED",
+        "gate_reached": true,
+        "trace": [
+          "pool_resource_model.py:Pool.request:12:8:0",
+          "pool_resource_model.py:Pool.request:15:12:1"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "connection-permit"
+            ],
+            [
+              "release",
+              "connection-permit"
+            ],
+            [
+              "acquire",
+              "connection-permit"
+            ],
+            [
+              "release",
+              "connection-permit"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null,
+        "recovery_status": "OK",
+        "occurrence": 1
+      },
+      {
+        "site": "pool_resource_model.py:Pool.request:15:12:1",
+        "status": "CANCELLED",
+        "gate_reached": true,
+        "trace": [
+          "pool_resource_model.py:Pool.request:12:8:0",
+          "pool_resource_model.py:Pool.request:15:12:1"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "connection-permit"
+            ],
+            [
+              "release",
+              "connection-permit"
+            ],
+            [
+              "acquire",
+              "connection-permit"
+            ],
+            [
+              "release",
+              "connection-permit"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null,
+        "recovery_status": "OK",
+        "occurrence": 1
+      },
+      {
+        "site": "pool_resource_model.py:Pool.request:16:12:2",
+        "status": "CANCELLED",
+        "gate_reached": true,
+        "trace": [
+          "pool_resource_model.py:Pool.request:12:8:0",
+          "pool_resource_model.py:Pool.request:15:12:1",
+          "pool_resource_model.py:Pool.request:16:12:2"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "connection-permit"
+            ],
+            [
+              "release",
+              "connection-permit"
+            ],
+            [
+              "acquire",
+              "connection-permit"
+            ],
+            [
+              "release",
+              "connection-permit"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null,
+        "recovery_status": "OK",
+        "occurrence": 1
+      }
+    ],
+    "violations": 0,
+    "unknown_results": 0,
+    "first_counterexample": null,
+    "sites": [
+      {
+        "id": "pool_resource_model.py:Pool.request:12:8:0",
+        "function": "Pool.request",
+        "line": 12,
+        "column": 8
+      },
+      {
+        "id": "pool_resource_model.py:Pool.request:15:12:1",
+        "function": "Pool.request",
+        "line": 15,
+        "column": 12
+      },
+      {
+        "id": "pool_resource_model.py:Pool.request:16:12:2",
+        "function": "Pool.request",
+        "line": 16,
+        "column": 12
+      }
+    ],
+    "scope": "explicit await only; reachable baseline paths; cancellation does not prove all interleavings",
+    "elapsed_wall_seconds": 0.00034
+  },
+  "nested_cleanup_bug_model": {
+    "schema": "axiomforge.nested-cancellation.v1",
+    "method": "failure-induced-site-BFS",
+    "baseline": {
+      "schedule": [],
+      "fired": [],
+      "status": "OK",
+      "trace": [
+        "nested_cleanup.py:Pool.request:16:12:1"
+      ],
+      "observed": {
+        "held": [],
+        "violations": [],
+        "history": [
+          [
+            "acquire",
+            "r"
+          ],
+          [
+            "release",
+            "r"
+          ]
+        ]
+      },
+      "invariant_pass": true,
+      "error": null
+    },
+    "max_depth": 2,
+    "max_runs": 20,
+    "executed": 3,
+    "violations": 2,
+    "first_counterexample": {
+      "schedule": [
+        "nested_cleanup.py:Pool.request:16:12:1",
+        "nested_cleanup.py:Pool.request:20:12:2"
+      ],
+      "fired": [
+        "nested_cleanup.py:Pool.request:16:12:1",
+        "nested_cleanup.py:Pool.request:20:12:2"
+      ],
+      "status": "CANCELLED",
+      "trace": [
+        "nested_cleanup.py:Pool.request:16:12:1",
+        "nested_cleanup.py:Pool.request:20:12:2",
+        "nested_cleanup.py:Pool._cleanup:10:8:0"
+      ],
+      "observed": {
+        "held": [
+          "r"
+        ],
+        "violations": [],
+        "history": [
+          [
+            "acquire",
+            "r"
+          ]
+        ]
+      },
+      "invariant_pass": false,
+      "error": null
+    },
+    "runs": [
+      {
+        "schedule": [
+          "nested_cleanup.py:Pool.request:16:12:1"
+        ],
+        "fired": [
+          "nested_cleanup.py:Pool.request:16:12:1"
+        ],
+        "status": "CANCELLED",
+        "trace": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "r"
+            ],
+            [
+              "release",
+              "r"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null
+      },
+      {
+        "schedule": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2"
+        ],
+        "fired": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2"
+        ],
+        "status": "CANCELLED",
+        "trace": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "observed": {
+          "held": [
+            "r"
+          ],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "r"
+            ]
+          ]
+        },
+        "invariant_pass": false,
+        "error": null
+      },
+      {
+        "schedule": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "fired": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "status": "CANCELLED",
+        "trace": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "observed": {
+          "held": [
+            "r"
+          ],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "r"
+            ]
+          ]
+        },
+        "invariant_pass": false,
+        "error": null
+      }
+    ],
+    "exhausted_frontier": true,
+    "limitations": "bounded schedules; only explicit awaits; injected scheduling and finite settling; no all-schedule safety proof",
+    "elapsed_wall_seconds": 0.000428
+  },
+  "nested_cleanup_fixed_model": {
+    "schema": "axiomforge.nested-cancellation.v1",
+    "method": "failure-induced-site-BFS",
+    "baseline": {
+      "schedule": [],
+      "fired": [],
+      "status": "OK",
+      "trace": [
+        "nested_cleanup.py:Pool.request:16:12:1"
+      ],
+      "observed": {
+        "held": [],
+        "violations": [],
+        "history": [
+          [
+            "acquire",
+            "r"
+          ],
+          [
+            "release",
+            "r"
+          ]
+        ]
+      },
+      "invariant_pass": true,
+      "error": null
+    },
+    "max_depth": 2,
+    "max_runs": 20,
+    "executed": 3,
+    "violations": 0,
+    "first_counterexample": null,
+    "runs": [
+      {
+        "schedule": [
+          "nested_cleanup.py:Pool.request:16:12:1"
+        ],
+        "fired": [
+          "nested_cleanup.py:Pool.request:16:12:1"
+        ],
+        "status": "CANCELLED",
+        "trace": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "r"
+            ],
+            [
+              "release",
+              "r"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null
+      },
+      {
+        "schedule": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2"
+        ],
+        "fired": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2"
+        ],
+        "status": "CANCELLED",
+        "trace": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "r"
+            ],
+            [
+              "release",
+              "r"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null
+      },
+      {
+        "schedule": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "fired": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "status": "CANCELLED",
+        "trace": [
+          "nested_cleanup.py:Pool.request:16:12:1",
+          "nested_cleanup.py:Pool.request:20:12:2",
+          "nested_cleanup.py:Pool._cleanup:10:8:0"
+        ],
+        "observed": {
+          "held": [],
+          "violations": [],
+          "history": [
+            [
+              "acquire",
+              "r"
+            ],
+            [
+              "release",
+              "r"
+            ]
+          ]
+        },
+        "invariant_pass": true,
+        "error": null
+      }
+    ],
+    "exhausted_frontier": true,
+    "limitations": "bounded schedules; only explicit awaits; injected scheduling and finite settling; no all-schedule safety proof",
+    "elapsed_wall_seconds": 0.00023
+  },
+  "study": {
+    "model_provenance": "Independently authored minimal models of HTTPcore PR #305 (not upstream source execution)",
+    "pr_url": "https://github.com/encode/httpcore/pull/305",
+    "interpretation": "A counterexample on this model proves a safety violation in the model at a specific cancellation checkpoint, not APR success or upstream fix.",
+    "comparison": "Same source structure, fault sites, scenario, safety invariant and bounded cancellation budget"
+  }
+}

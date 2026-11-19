@@ -1,0 +1,131 @@
+{
+  "schema": "axiomforge.patch-evidence.v1",
+  "issue_url": "https://github.com/sqlfluff/sqlfluff/issues/8594",
+  "repo": "/mnt/data/rebuild/upstreams/sqlfluff",
+  "source_sha256": {
+    "src/sqlfluff/rules/references/RF01.py": "d57c7bad4863c810a0213d81bcb460ef136261f10043ff320279198e8bca15b3"
+  },
+  "patch_sha256": "774163e8359179c8e7f273a861976c8d1983f4965e416a200ec2a2e49b2818e6",
+  "baseline": {
+    "reproducer": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "from sqlfluff import lint\nq='SELECT CI.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;'\nv=lint(q,dialect='ansi',rules=['RF01'])\nassert not any(x['code']=='RF01' for x in v), 'RF01-CASE-MISMATCH'\n"
+        ],
+        "returncode": 1,
+        "timeout": false,
+        "seconds": 1.2956,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 4, in <module>\n    assert not any(x['code']=='RF01' for x in v), 'RF01-CASE-MISMATCH'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: RF01-CASE-MISMATCH\n",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "2462a8e0ec524fdc2c6913a13b1c29857e3a0beec35697af704c51ed77f14e5f"
+      }
+    ],
+    "control": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "from sqlfluff import lint\nq='SELECT missing.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;'\nv=lint(q,dialect='ansi',rules=['RF01'])\nassert any(x['code']=='RF01' for x in v),v\n"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 1.2233,
+        "stdout": "",
+        "stderr": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "independent_checks": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "from sqlfluff import lint\nq='SELECT ci.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;'\nv=lint(q,dialect='ansi',rules=['RF01'])\nassert not any(x['code']=='RF01' for x in v),v\n"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 1.2877,
+        "stdout": "",
+        "stderr": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "independent_reproductions": [],
+    "independent_pass": true,
+    "independent_failure_confirmed": true,
+    "independent_failure_repaired": true,
+    "consistent_fail": true,
+    "repaired": false,
+    "controls_pass": true
+  },
+  "patched": {
+    "reproducer": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "from sqlfluff import lint\nq='SELECT CI.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;'\nv=lint(q,dialect='ansi',rules=['RF01'])\nassert not any(x['code']=='RF01' for x in v), 'RF01-CASE-MISMATCH'\n"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 1.2905,
+        "stdout": "",
+        "stderr": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "control": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "from sqlfluff import lint\nq='SELECT missing.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;'\nv=lint(q,dialect='ansi',rules=['RF01'])\nassert any(x['code']=='RF01' for x in v),v\n"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 1.2127,
+        "stdout": "",
+        "stderr": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "independent_checks": [
+      {
+        "argv": [
+          "/opt/pyvenv/bin/python",
+          "-c",
+          "from sqlfluff import lint\nq='SELECT ci.id FROM source_table AS ci JOIN second_table AS b ON ci.id = b.id;'\nv=lint(q,dialect='ansi',rules=['RF01'])\nassert not any(x['code']=='RF01' for x in v),v\n"
+        ],
+        "returncode": 0,
+        "timeout": false,
+        "seconds": 1.2096,
+        "stdout": "",
+        "stderr": "",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "independent_reproductions": [],
+    "independent_pass": true,
+    "independent_failure_confirmed": true,
+    "independent_failure_repaired": true,
+    "consistent_fail": false,
+    "repaired": true,
+    "controls_pass": true
+  },
+  "passed": true,
+  "independent_check_count": 1,
+  "independent_reproduction_count": 0,
+  "isolated_checks": true,
+  "evidence_tier": "INDEPENDENT_CONTROLS",
+  "baseline_reused_across_candidates": false,
+  "measurement_seconds": 13.5618,
+  "interpretation": "local patch candidate only; no PR or upstream acceptance"
+}

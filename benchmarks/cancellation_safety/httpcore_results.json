@@ -1,0 +1,32 @@
+{
+  "library": "httpcore",
+  "version": "1.0.9",
+  "comparison": "installed library code versus in-memory mutation BaseException -> Exception",
+  "external_io": "fake blocking network connection, actual pool queue/cleanup implementation",
+  "shipped": {
+    "before": {
+      "pending_requests": 1,
+      "connections": 1
+    },
+    "after": {
+      "pending_requests": 0,
+      "connections": 1
+    },
+    "cancel_status": "CANCELLED",
+    "queue_invariant": true
+  },
+  "cancellation_handler_mutant": {
+    "before": {
+      "pending_requests": 1,
+      "connections": 1
+    },
+    "after": {
+      "pending_requests": 1,
+      "connections": 1
+    },
+    "cancel_status": "CANCELLED",
+    "queue_invariant": false
+  },
+  "differential_detects_mutant": true,
+  "scope": "Controlled mutant on real installed code; NOT historical version 0.12.3 nor upstream new defect"
+}

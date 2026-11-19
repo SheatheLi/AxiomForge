@@ -1,0 +1,68 @@
+{
+  "rows": [
+    {
+      "close_attempt_budget": 2,
+      "max_interruptions": 1,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 0,
+      "improved": true
+    },
+    {
+      "close_attempt_budget": 2,
+      "max_interruptions": 2,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 1,
+      "improved": false
+    },
+    {
+      "close_attempt_budget": 3,
+      "max_interruptions": 1,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 0,
+      "improved": true
+    },
+    {
+      "close_attempt_budget": 3,
+      "max_interruptions": 2,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 0,
+      "improved": true
+    },
+    {
+      "close_attempt_budget": 3,
+      "max_interruptions": 3,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 1,
+      "improved": false
+    },
+    {
+      "close_attempt_budget": 4,
+      "max_interruptions": 1,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 0,
+      "improved": true
+    },
+    {
+      "close_attempt_budget": 4,
+      "max_interruptions": 2,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 0,
+      "improved": true
+    },
+    {
+      "close_attempt_budget": 4,
+      "max_interruptions": 3,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 0,
+      "improved": true
+    },
+    {
+      "close_attempt_budget": 4,
+      "max_interruptions": 4,
+      "early_bad_terminal_count": 1,
+      "deferred_bad_terminal_count": 1,
+      "improved": false
+    }
+  ],
+  "boundary": "Finite single-connection model; absent retry after budget depletion remains unsafe"
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "axiomforge.issue-contract.v1",
+  "issue_url": "https://github.com/sqlfluff/sqlfluff/issues/8542",
+  "checkout": "__PROVIDE_CHECKOUT__",
+  "reproduce": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import lint\nq='WITH cte AS (SELECT a,b FROM t) SELECT * FROM cte UNION SELECT * FROM cte UNION SELECT c,d,e FROM t2'\nif not any(v[\"code\"]==\"AM07\" for v in lint(q,dialect=\"ansi\",rules=[\"AM07\"])):raise AssertionError(\"ISSUE-8542-MISSED-CTE-COUNT\")\n"
+  ],
+  "control": [
+    "${PYTHON}",
+    "-c",
+    "import sys;import os; extra=os.environ.get(\"AXIOMFORGE_SQLFLUFF_DEPS\"); extra and sys.path.insert(0,extra);sys.path.insert(0,\"src\");from sqlfluff import lint\nfor q in ['WITH cte AS (SELECT * FROM cte UNION ALL SELECT 1 AS n) SELECT * FROM cte UNION SELECT 1', 'WITH cte AS (SELECT a,b FROM t) SELECT * FROM cte UNION SELECT * FROM cte UNION SELECT c,d FROM t2']:\n  if any(v[\"code\"]==\"AM07\" for v in lint(q,dialect=\"ansi\",rules=[\"AM07\"])):raise AssertionError(\"control wrongly flagged\")\n"
+  ],
+  "failure_fingerprint": "ISSUE-8542-MISSED-CTE-COUNT",
+  "editable_files": [
+    "src/sqlfluff/rules/ambiguous/AM07.py"
+  ],
+  "timeout_seconds": 25,
+  "repetitions": 1
+}

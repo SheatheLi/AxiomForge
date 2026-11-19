@@ -1,0 +1,64 @@
+{
+  "schema": "axiomforge.retrospective-cross-repo-result.v1",
+  "evaluation_class": "AFTER_OPERATOR_TUNING_NOT_HOLDOUT",
+  "retains_v08_original_holdout_success": 0,
+  "not_an_estimate_of_generalization_rate": true,
+  "equal_candidate_limit": 6,
+  "new_verified": 2,
+  "old_operator_family_verified": 0,
+  "public_issue_sources_real": 2,
+  "new_pr_submissions": 0,
+  "unreviewed_existing_upstream_prs_conflict": true,
+  "cases": [
+    {
+      "id": "sqlalchemy-13637",
+      "public_issue": "https://github.com/sqlalchemy/sqlalchemy/issues/13637",
+      "upstream_source_sha256": "3699744820de755a0dd124d2c28764136e7bc34650b8bc2ebf93ab6a3aa356f7",
+      "classification": "RETROSPECTIVE_AFTER_ISSUE_REVIEW",
+      "candidate_limit": 6,
+      "time_budget_seconds": 75.0,
+      "trials": {
+        "expanded": {
+          "status": "VERIFIED_CANDIDATE",
+          "operator": "bracket-delimiter-aware",
+          "attempts": 6,
+          "elapsed_seconds": 30.481,
+          "patch_sha256": "63fff0f53caafc3e051e87af0bbdaaa2f7226211a34b9f9e7d9a42fa35264836",
+          "evidence_tier": "INDEPENDENT_FAILURES_AND_CONTROLS",
+          "receipt_passed": true
+        },
+        "old_family_ablation": {
+          "status": "NOT_SOLVED",
+          "operator": null,
+          "attempts": 6,
+          "elapsed_seconds": 31.042
+        }
+      }
+    },
+    {
+      "id": "sqlfluff-8709",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8709",
+      "upstream_source_sha256": "1d671ccb8e8a1dc5fb49fdc98fb0ea61a4732014e9de76c94ecd65015760dca8",
+      "classification": "RETROSPECTIVE_AFTER_ISSUE_REVIEW",
+      "candidate_limit": 6,
+      "time_budget_seconds": 60.0,
+      "trials": {
+        "expanded": {
+          "status": "VERIFIED_CANDIDATE",
+          "operator": "composite-operator-inversion-guard",
+          "attempts": 1,
+          "elapsed_seconds": 11.373,
+          "patch_sha256": "3d5be03b03df64665668b6ba70feec5cca2e69069a20f0c6a44e139d985281da",
+          "evidence_tier": "INDEPENDENT_CONTROLS",
+          "receipt_passed": true
+        },
+        "old_family_ablation": {
+          "status": "NOT_SOLVED",
+          "operator": null,
+          "attempts": 0,
+          "elapsed_seconds": 0.012
+        }
+      }
+    }
+  ]
+}

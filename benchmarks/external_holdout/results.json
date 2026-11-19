@@ -1,0 +1,273 @@
+{
+  "schema": "axiomforge.external-holdout-result.v1",
+  "manifest_sha256": "87882a0524db5f2edfbade91dcd34b0e6ab94b15403f3f5783e253b27609bd56",
+  "frozen_operator_sources_confirmed": true,
+  "python": "3.13.5",
+  "environment": "local offline source snapshots; upstream dependencies provided externally",
+  "budgets": {
+    "candidates_per_case": 5,
+    "seconds_per_case": 40,
+    "repetitions": 1
+  },
+  "models": "both",
+  "results": [
+    {
+      "id": "sqlfluff-8709",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8709",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "1d671ccb8e8a1dc5fb49fdc98fb0ea61a4732014e9de76c94ecd65015760dca8",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": " <=> a.x;',dialect='mysql',rules=['ST09']);assert '>=>' not in x, 'HOLDOUT-8709-OPERATOR-CORRUPTION'; assert '<=>' in x\n                                                                                                                                                            ^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-8709-OPERATOR-CORRUPTION\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 29.86,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 31.391,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "sqlfluff-8444",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8444",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "3dc4c50257a20f9d1f342e465be629188ace8c28fce04053c04767f67945c19c",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "sqlfluff import lint,fix;assert any(x['code']=='PRS' for x in lint('SELECT SELECT 1;',dialect='ansi')), 'HOLDOUT-8444-INVALID-NESTED-SELECT'\n                                                                             ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-8444-INVALID-NESTED-SELECT\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 29.451,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 26.789,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "sqlfluff-8589",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8589",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "3dc4c50257a20f9d1f342e465be629188ace8c28fce04053c04767f67945c19c",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "ert any(x['code']=='PRS' for x in lint('CREATE TABLE t (a DECIMAL(10, 2, 3));',dialect='ansi')), 'HOLDOUT-8589-DATATYPE-ARITY'\n                                                                             ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-8589-DATATYPE-ARITY\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 29.093,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 29.592,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "sqlfluff-8594",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8594",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "d57c7bad4863c810a0213d81bcb460ef136261f10043ff320279198e8bca15b3",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "N ci.id = b.id;',dialect='ansi',rules=['RF01'])), 'HOLDOUT-8594-CASEFOLD'\n                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-8594-CASEFOLD\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 29.128,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 32.344,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "sqlfluff-8373",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8373",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "2c9e5b5d55ddfd28dc3255e4538c46c5bf72937d5e2d2182cb105f087947f877",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "CREATE VIEW myview AS select 1 / 100 as z from dual;',dialect='oracle')), 'HOLDOUT-8373-ORACLE-DIVISION'\n                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-8373-ORACLE-DIVISION\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 31.403,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 32.849,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "sqlfluff-8707",
+      "public_issue": "https://github.com/sqlfluff/sqlfluff/issues/8707",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "18c4660f25340f56914ea0c06149cb2b2bd3f590fba568b5b4ceff5214cbd5cc",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "COLUMN a UInt8, ADD COLUMN b UInt8;',dialect='clickhouse')), 'HOLDOUT-8707-CLICKHOUSE-ALTER'\n                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-8707-CLICKHOUSE-ALTER\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 31.069,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 31.717,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "sqlalchemy-13637",
+      "public_issue": "https://github.com/sqlalchemy/sqlalchemy/issues/13637",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "3699744820de755a0dd124d2c28764136e7bc34650b8bc2ebf93ab6a3aa356f7",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "_str = zip(\n    ^^^^^^^^^^^^^^^^\nValueError: too many values to unpack (expected 2)\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n    raise AssertionError('HOLDOUT-13637-BRACKETED-IPV6') from exc\nAssertionError: HOLDOUT-13637-BRACKETED-IPV6\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 17.675,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 18.17,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    },
+    {
+      "id": "httpcore-1110",
+      "public_issue": "https://github.com/encode/httpcore/issues/1110",
+      "operator_source_frozen": true,
+      "repo_source_sha256": "0ce210dacd9909ff6a7f0c61ccca6b4cf2ea08bf0ec465e2285eaa447c6f5726",
+      "baseline": {
+        "repro_exit": 1,
+        "fingerprint_match": true,
+        "repro_timeout": false,
+        "control_pass": true,
+        "repro_stderr_tail": "Traceback (most recent call last):\n  File \"<string>\", line 22, in <module>\n    assert a not in closing and a in p.connections, 'HOLDOUT-1110-CLOSES-ASSIGNED'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: HOLDOUT-1110-CLOSES-ASSIGNED\n",
+        "control_stderr_tail": ""
+      },
+      "status": "VALID_BASELINE",
+      "generic": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 10.297,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      },
+      "full": {
+        "status": "NOT_SOLVED",
+        "attempts": 5,
+        "seconds": 11.031,
+        "operator": null,
+        "verified": false,
+        "evidence_tier": "NOT_SOLVED"
+      }
+    }
+  ],
+  "summary": {
+    "registered": 8,
+    "valid_baselines": 8,
+    "invalid_baselines": 0,
+    "verified_full": 0,
+    "verified_generic": 0,
+    "independent_upstream_prs_reviewed": 0,
+    "strong_external_apr_baseline_run": false,
+    "limitations": "Not a statistically representative blind benchmark: issue descriptions were read; exact regression scripts were authored after operator freeze and before search; file scope is predeclared."
+  }
+}

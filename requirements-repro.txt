@@ -1,0 +1,12 @@
+# Isolated historical reproductions; do not infer current upstream failures.
+pytest==9.1.1
+httpx==0.28.1
+httpcore==1.0.9
+anyio==4.15.1
+trio==0.34.0
+SQLAlchemy==2.0.50
+numpy==2.3.5
+scipy==1.17.0
+pandas==2.2.3
+sympy==1.14.0
+hypothesis==6.169.3

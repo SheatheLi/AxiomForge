@@ -1,0 +1,9 @@
+{
+  "original_events": 5,
+  "minimal_events": 2,
+  "oracle_queries": 6,
+  "keys": [
+    "a",
+    "d"
+  ]
+}

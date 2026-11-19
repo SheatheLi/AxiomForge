@@ -1,0 +1,124 @@
+{
+  "digest": "181c40b5a3368b58f2b5e4a771b3d670042767bd594be7ff70dad2fa62952ef1",
+  "payload": {
+    "basis": "one declared fact table; queries actually executed in read-only SQLite",
+    "comparison": {
+      "after_affected": 2,
+      "before_affected": 0,
+      "new_affected_ids_in_visible_sample": [
+        "order-1",
+        "order-3"
+      ],
+      "resolved_ids_in_visible_sample": [],
+      "status": "REGRESSION",
+      "warning": null
+    },
+    "contract": {
+      "fact_id": "id",
+      "fact_table": "orders",
+      "invariant": "one query result row per baseline fact with the identical integer measure",
+      "issue_limit": 50,
+      "max_rows": 100000,
+      "measure": "price",
+      "result_id": "fact_id",
+      "result_measure": "amount"
+    },
+    "evaluations": [
+      {
+        "affected": [],
+        "affected_truncated": false,
+        "counts": {
+          "affected_id_count": 0,
+          "baseline_facts": 3,
+          "changed_measure_facts": 0,
+          "duplicated_facts": 0,
+          "missing_facts": 0,
+          "result_rows": 3,
+          "unexpected_result_ids": 0
+        },
+        "limits": [
+          "explicit once-per-fact and unchanged-measure contract",
+          "SQLite SELECT only; not PostgreSQL/dbt dialect semantics",
+          "no proof of business correctness or original SQL causality",
+          "aggregate identities must be retained in query output"
+        ],
+        "measures": {
+          "baseline_total": 200,
+          "result_total": 200,
+          "sum_abs_per_id_delta": 0,
+          "total_delta": 0
+        },
+        "result_rows_sha256": "b2f603d309ad0daf18dc945093a2581685215563ecd77d9bdf7b096ac9b72c22",
+        "status": "PASS"
+      },
+      {
+        "affected": [
+          {
+            "actual_measure": 200,
+            "actual_rows": 2,
+            "expected_measure": 100,
+            "expected_rows": 1,
+            "fact_id": "order-1",
+            "flags": [
+              "DUPLICATE",
+              "MEASURE_CHANGED"
+            ],
+            "measure_delta": 100
+          },
+          {
+            "actual_measure": -200,
+            "actual_rows": 2,
+            "expected_measure": -100,
+            "expected_rows": 1,
+            "fact_id": "order-3",
+            "flags": [
+              "DUPLICATE",
+              "MEASURE_CHANGED"
+            ],
+            "measure_delta": -100
+          }
+        ],
+        "affected_truncated": false,
+        "counts": {
+          "affected_id_count": 2,
+          "baseline_facts": 3,
+          "changed_measure_facts": 2,
+          "duplicated_facts": 2,
+          "missing_facts": 0,
+          "result_rows": 5,
+          "unexpected_result_ids": 0
+        },
+        "limits": [
+          "explicit once-per-fact and unchanged-measure contract",
+          "SQLite SELECT only; not PostgreSQL/dbt dialect semantics",
+          "no proof of business correctness or original SQL causality",
+          "aggregate identities must be retained in query output"
+        ],
+        "measures": {
+          "baseline_total": 200,
+          "result_total": 200,
+          "sum_abs_per_id_delta": 200,
+          "total_delta": 0
+        },
+        "result_rows_sha256": "d152146dd244ffa890e80e3ad6acfeb05e1db96f9672a8b9d26c9d5dfb23da2a",
+        "status": "BLOCK"
+      }
+    ],
+    "inputs": {
+      "database": "/mnt/data/work_latest/六路线高压工程/项目层/AxiomForge/examples/sql_review/orders.sqlite",
+      "database_sha256": "47d2163a559b543f09bffef0c134be502960febd61fd788fa9cca2148ba7cf62",
+      "sql_files": [
+        {
+          "path": "/mnt/data/work_latest/六路线高压工程/项目层/AxiomForge/examples/sql_review/before.sql",
+          "sha256": "22e858d86f1f07c13332eedf322eaab62661fb02a4695af387d303fd3abce32f"
+        },
+        {
+          "path": "/mnt/data/work_latest/六路线高压工程/项目层/AxiomForge/examples/sql_review/after.sql",
+          "sha256": "937a673aa169f0826d10861bcd155ec4a4a6130f73811ae74b34bc1820a60a82"
+        }
+      ]
+    },
+    "schema": "axiomforge.sql_review.v1",
+    "status": "REGRESSION"
+  }
+}

@@ -1,0 +1,12 @@
+diff --git a/sqlalchemy/dialects/postgresql/base.py b/sqlalchemy/dialects/postgresql/base.py
+--- a/sqlalchemy/dialects/postgresql/base.py
++++ b/sqlalchemy/dialects/postgresql/base.py
+@@ -3427,7 +3427,7 @@
+                 integrated_multihost = True
+                 hosts, ports_str = zip(
+                     *[
+-                        token.split(":") if ":" in token else (token, None)
++                        (lambda __axiom_field: (__axiom_field[1:__axiom_field.index("]")], __axiom_field[__axiom_field.index("]")+1:].removeprefix(':') or None) if __axiom_field.startswith("[") and (__axiom_field.endswith("]") or "]"+':' in __axiom_field) else __axiom_field.split(':'))(token) if ":" in token else (token, None)
+                         for token in url.query["host"]
+                     ]
+                 )

@@ -1,0 +1,397 @@
+{
+  "source_issue": "https://github.com/encode/httpx/issues/3782",
+  "httpx_version": "0.28.1",
+  "httpcore_version": "1.0.9",
+  "anyio_version": "4.13.0",
+  "h11_version": "0.16.0",
+  "runtime": "3.13.5",
+  "server": "in-process localhost HTTP/1.1 streaming over real TCP",
+  "single": {
+    "cancel_times": 1,
+    "rows": [
+      {
+        "iteration": 1,
+        "active_pool_connections": 0,
+        "pending_requests": 0,
+        "pool_repr": "<AsyncConnectionPool [Requests: 0 active, 0 queued | Connections: 0 active, 0 idle]>"
+      },
+      {
+        "iteration": 2,
+        "active_pool_connections": 0,
+        "pending_requests": 0,
+        "pool_repr": "<AsyncConnectionPool [Requests: 0 active, 0 queued | Connections: 0 active, 0 idle]>"
+      },
+      {
+        "iteration": 3,
+        "active_pool_connections": 0,
+        "pending_requests": 0,
+        "pool_repr": "<AsyncConnectionPool [Requests: 0 active, 0 queued | Connections: 0 active, 0 idle]>"
+      }
+    ],
+    "cleanup_events": [
+      {
+        "stage": "AsyncHTTP11Connection._response_closed",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": null,
+        "connection_state": "3"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "AsyncHTTP11Connection._response_closed",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": null,
+        "connection_state": "3"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "AsyncHTTP11Connection._response_closed",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": null,
+        "connection_state": "3"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      }
+    ],
+    "protocol_summary": {
+      "schema": "axiomforge.resource-protocol.v1",
+      "events": 0,
+      "active_resources": 0,
+      "findings": [],
+      "finding_kinds": [],
+      "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+    },
+    "protocol_events": []
+  },
+  "double": {
+    "cancel_times": 2,
+    "rows": [
+      {
+        "iteration": 1,
+        "active_pool_connections": 1,
+        "pending_requests": 0,
+        "pool_repr": "<AsyncConnectionPool [Requests: 0 active, 0 queued | Connections: 1 active, 0 idle]>"
+      },
+      {
+        "iteration": 2,
+        "active_pool_connections": 2,
+        "pending_requests": 0,
+        "pool_repr": "<AsyncConnectionPool [Requests: 0 active, 0 queued | Connections: 2 active, 0 idle]>"
+      },
+      {
+        "iteration": 3,
+        "active_pool_connections": 3,
+        "pending_requests": 0,
+        "pool_repr": "<AsyncConnectionPool [Requests: 0 active, 0 queued | Connections: 3 active, 0 idle]>"
+      }
+    ],
+    "cleanup_events": [
+      {
+        "stage": "AsyncHTTP11Connection._response_closed",
+        "event": "CANCELLED_DURING_CLEANUP",
+        "closed_flag": null,
+        "connection_state": "1"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CANCELLED_DURING_CLEANUP",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "AsyncHTTP11Connection._response_closed",
+        "event": "CANCELLED_DURING_CLEANUP",
+        "closed_flag": null,
+        "connection_state": "1"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CANCELLED_DURING_CLEANUP",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "AsyncHTTP11Connection._response_closed",
+        "event": "CANCELLED_DURING_CLEANUP",
+        "closed_flag": null,
+        "connection_state": "1"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CANCELLED_DURING_CLEANUP",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "HTTP11ConnectionByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      },
+      {
+        "stage": "PoolByteStream.aclose",
+        "event": "CLEANUP_RETURNED",
+        "closed_flag": true,
+        "connection_state": "None"
+      }
+    ],
+    "protocol_summary": {
+      "schema": "axiomforge.resource-protocol.v1",
+      "events": 6,
+      "active_resources": 0,
+      "findings": [
+        {
+          "kind": "STRANDED_ACTIVE_POOL_CONNECTION",
+          "resource": "httpcore-connection:1",
+          "generation": null,
+          "at_event": 0,
+          "message": "Pool connection remains active after observed requests drained",
+          "causal_witness": [
+            {
+              "seq": 0,
+              "kind": "pool_quiescence",
+              "resource": "httpcore-connection:1",
+              "pool": "httpx:local",
+              "active": true,
+              "pending_requests": 0,
+              "note": "Post-cancel quiescent snapshot 1"
+            },
+            {
+              "seq": 1,
+              "kind": "pool_quiescence",
+              "resource": "httpcore-connection:1",
+              "pool": "httpx:local",
+              "active": true,
+              "pending_requests": 0,
+              "note": "Post-cancel quiescent snapshot 2"
+            },
+            {
+              "seq": 3,
+              "kind": "pool_quiescence",
+              "resource": "httpcore-connection:1",
+              "pool": "httpx:local",
+              "active": true,
+              "pending_requests": 0,
+              "note": "Post-cancel quiescent snapshot 3"
+            }
+          ]
+        },
+        {
+          "kind": "STRANDED_ACTIVE_POOL_CONNECTION",
+          "resource": "httpcore-connection:2",
+          "generation": null,
+          "at_event": 2,
+          "message": "Pool connection remains active after observed requests drained",
+          "causal_witness": [
+            {
+              "seq": 2,
+              "kind": "pool_quiescence",
+              "resource": "httpcore-connection:2",
+              "pool": "httpx:local",
+              "active": true,
+              "pending_requests": 0,
+              "note": "Post-cancel quiescent snapshot 2"
+            },
+            {
+              "seq": 4,
+              "kind": "pool_quiescence",
+              "resource": "httpcore-connection:2",
+              "pool": "httpx:local",
+              "active": true,
+              "pending_requests": 0,
+              "note": "Post-cancel quiescent snapshot 3"
+            }
+          ]
+        },
+        {
+          "kind": "STRANDED_ACTIVE_POOL_CONNECTION",
+          "resource": "httpcore-connection:3",
+          "generation": null,
+          "at_event": 5,
+          "message": "Pool connection remains active after observed requests drained",
+          "causal_witness": [
+            {
+              "seq": 5,
+              "kind": "pool_quiescence",
+              "resource": "httpcore-connection:3",
+              "pool": "httpx:local",
+              "active": true,
+              "pending_requests": 0,
+              "note": "Post-cancel quiescent snapshot 3"
+            }
+          ]
+        }
+      ],
+      "finding_kinds": [
+        "STRANDED_ACTIVE_POOL_CONNECTION"
+      ],
+      "limits": "Only instrumented events are checked. Remaining open resources owned by a healthy pool are not leaks. No server-side sockets or transaction state is inferred without adapter evidence."
+    },
+    "protocol_events": [
+      {
+        "seq": 0,
+        "kind": "pool_quiescence",
+        "resource": "httpcore-connection:1",
+        "pool": "httpx:local",
+        "active": true,
+        "pending_requests": 0,
+        "note": "Post-cancel quiescent snapshot 1"
+      },
+      {
+        "seq": 1,
+        "kind": "pool_quiescence",
+        "resource": "httpcore-connection:1",
+        "pool": "httpx:local",
+        "active": true,
+        "pending_requests": 0,
+        "note": "Post-cancel quiescent snapshot 2"
+      },
+      {
+        "seq": 2,
+        "kind": "pool_quiescence",
+        "resource": "httpcore-connection:2",
+        "pool": "httpx:local",
+        "active": true,
+        "pending_requests": 0,
+        "note": "Post-cancel quiescent snapshot 2"
+      },
+      {
+        "seq": 3,
+        "kind": "pool_quiescence",
+        "resource": "httpcore-connection:1",
+        "pool": "httpx:local",
+        "active": true,
+        "pending_requests": 0,
+        "note": "Post-cancel quiescent snapshot 3"
+      },
+      {
+        "seq": 4,
+        "kind": "pool_quiescence",
+        "resource": "httpcore-connection:2",
+        "pool": "httpx:local",
+        "active": true,
+        "pending_requests": 0,
+        "note": "Post-cancel quiescent snapshot 3"
+      },
+      {
+        "seq": 5,
+        "kind": "pool_quiescence",
+        "resource": "httpcore-connection:3",
+        "pool": "httpx:local",
+        "active": true,
+        "pending_requests": 0,
+        "note": "Post-cancel quiescent snapshot 3"
+      }
+    ]
+  },
+  "interpretation": "Exploratory live-library reproduction attempt, not an upstream defect claim; compare active/blocked outcomes and platform-dependent nonreproduction."
+}

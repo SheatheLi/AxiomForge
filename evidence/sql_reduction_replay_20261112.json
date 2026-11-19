@@ -1,0 +1,33 @@
+{
+  "benchmark": "single-DB deterministic fanout witness; same regression oracle and row-removal scope",
+  "sqlite_version": "3.46.1",
+  "python": "3.13.5",
+  "n_orders": 180,
+  "results": {
+    "hierarchical": {
+      "source_rows": 540,
+      "remaining_rows": 3,
+      "removed_pct": 99.44,
+      "oracle_calls": 58,
+      "elapsed_seconds": 0.0322,
+      "one_minimal": true,
+      "replay": "REPLAY_VERIFIED",
+      "file_bytes": 4133
+    },
+    "greedy": {
+      "source_rows": 540,
+      "remaining_rows": 3,
+      "removed_pct": 99.44,
+      "oracle_calls": 541,
+      "elapsed_seconds": 0.1561,
+      "one_minimal": true,
+      "replay": "REPLAY_VERIFIED",
+      "file_bytes": 4117
+    },
+    "comparison": {
+      "oracle_calls_saved_pct": 89.28,
+      "oracle_calls_ratio": 9.328,
+      "equal_failure_and_row_minimality": true
+    }
+  }
+}

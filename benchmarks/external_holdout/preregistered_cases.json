@@ -1,0 +1,107 @@
+{
+  "schema": "axiomforge.external-holdout.v1",
+  "frozen_operator_sha256": {
+    "src/axiomforge/issue_engine/__init__.py": "e0950b25a2cb7b846edbd63bac82df13660bce6f8f0764e1e3fee2fe49ad151d",
+    "src/axiomforge/issue_engine/ablation.py": "f11e96c6f9440771a79d950329adeeeffede02362005c888e232669f4a65c761",
+    "src/axiomforge/issue_engine/async_cleanup.py": "74aa1b14f80de39448461506ab7384eeb03334a0d414a33f04ac5c99659da7c4",
+    "src/axiomforge/issue_engine/cli.py": "df32a727a82378042270bcf467517767c56717811d38d6dc2edbc558183824ca",
+    "src/axiomforge/issue_engine/context_repair.py": "d335c3d84a93fc0fea1fbe3393a2d8db9e55ecd96af8a1c802b6d544fba70125",
+    "src/axiomforge/issue_engine/core.py": "75f2d34cd7f2a7113e47d15e0d5b481206d4f97fb72d13d787b3008e62cf2c6a",
+    "src/axiomforge/issue_engine/layout_repair.py": "83986f2b8c97faa47b8c5313c7101963a16d07efb51ca6c3fef3a418fc62f8f5",
+    "src/axiomforge/issue_engine/lifecycle_repair.py": "16afaf4bf4324ae00b1287a62d08cdae57fe53d41f188cdecb5fca8be9d7d1d2",
+    "src/axiomforge/issue_engine/localization.py": "7c50cdfbd14131308b3d2da88f1524e6cdd5b1a18af9fa9790c26848f2e77449",
+    "src/axiomforge/issue_engine/portfolio.py": "8dea71bfca2d012058cdcec12cdb6f18a657564fa7f85dce58896e1638a55d6e",
+    "src/axiomforge/issue_engine/query_scope_repair.py": "5492210638d8cf36a4f8631b3f5a2e5e934facd766c107289e17c321058ba11e",
+    "src/axiomforge/issue_engine/safety_repair.py": "68e680442706542d761f8585ede583504b13a91ef4345bc382f589c9fb436893",
+    "src/axiomforge/issue_engine/search.py": "7c9077dd0aa4b9a8732881972536c2ea2c690da138e316f335967bafcd2174dd",
+    "src/axiomforge/issue_engine/state_repair.py": "3cad1b194cd1da438127b3df835b010e9cd63f9f3a09dce5fc01f8cc459d9a16",
+    "src/axiomforge/issue_engine/synthesis.py": "692a9124ac1e6a1bcedd70f4f57be6e48f60de640e6ddde896c091b2ee29c763",
+    "src/axiomforge/issue_engine/trace_entry.py": "a15fbcbe092abc55d4149dcf5dad4317e0a22ce5d7b8b2bc36dd9f99648e862a"
+  },
+  "freeze_note": "The repaired-operator implementation was frozen before executing this case set. Cases were selected from public issue descriptions, not randomly sampled.",
+  "selection": "Eight previously unused bug mechanisms across three upstream projects; target source files are scoped to the named issue descriptions. All registered cases count, including invalid/nonreproducible cases.",
+  "budgets": {
+    "candidates_per_case": 5,
+    "seconds_per_case": 40,
+    "repetitions": 1
+  },
+  "caveats": [
+    "case author has read issue descriptions, not a blinded bug locator evaluation",
+    "not an external APR benchmark",
+    "external checkouts and optional import dependencies are not redistributed"
+  ],
+  "cases": [
+    {
+      "id": "sqlfluff-8709",
+      "repo": "sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff/issues/8709",
+      "file": "src/sqlfluff/rules/structure/ST09.py",
+      "failure_fingerprint": "HOLDOUT-8709-OPERATOR-CORRUPTION",
+      "repro_sha256": "35c09e50fcc9fd56ea2668fad0b8a5df1a1824441bdfce4f1b8b7896acc6062e",
+      "control_sha256": "eb2339f2675e5481273eee52028624ff3e2f53300e01dc193a10bf534d4f068c"
+    },
+    {
+      "id": "sqlfluff-8444",
+      "repo": "sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff/issues/8444",
+      "file": "src/sqlfluff/dialects/dialect_ansi.py",
+      "failure_fingerprint": "HOLDOUT-8444-INVALID-NESTED-SELECT",
+      "repro_sha256": "061a905f9a2e78131cd5ebda060408f43ae2e17f6d65a2dd57385f6f60af7b8c",
+      "control_sha256": "e5808624be840ebe641963e481dd74b2209eeb3879fdd4a2194ce023ca696f31"
+    },
+    {
+      "id": "sqlfluff-8589",
+      "repo": "sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff/issues/8589",
+      "file": "src/sqlfluff/dialects/dialect_ansi.py",
+      "failure_fingerprint": "HOLDOUT-8589-DATATYPE-ARITY",
+      "repro_sha256": "6ca7f32473a7878445b6de56e72a72d8c7cab80b2c307d61d8fb8a136122c690",
+      "control_sha256": "ea203d1ea4f86f0a44bede9cf51359779a5cffeafdc60fb861abf51767911364"
+    },
+    {
+      "id": "sqlfluff-8594",
+      "repo": "sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff/issues/8594",
+      "file": "src/sqlfluff/rules/references/RF01.py",
+      "failure_fingerprint": "HOLDOUT-8594-CASEFOLD",
+      "repro_sha256": "34dcd5a7091b12ba65a434ecb68d6316b38c161403b8cbed08a912492d72e18b",
+      "control_sha256": "f450b291a09aa0e30b95373327784d9c87754f9c1209f9f101b17e004344b194"
+    },
+    {
+      "id": "sqlfluff-8373",
+      "repo": "sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff/issues/8373",
+      "file": "src/sqlfluff/dialects/dialect_oracle.py",
+      "failure_fingerprint": "HOLDOUT-8373-ORACLE-DIVISION",
+      "repro_sha256": "d466d077e93b917e0a6a0d4eee34cb13a891b7fd55f3166cc97483381f0fc45c",
+      "control_sha256": "f4af196401502d2f5a1db8fdc10814dd89cf467c5c22244b0613779cc699a695"
+    },
+    {
+      "id": "sqlfluff-8707",
+      "repo": "sqlfluff",
+      "url": "https://github.com/sqlfluff/sqlfluff/issues/8707",
+      "file": "src/sqlfluff/dialects/dialect_clickhouse.py",
+      "failure_fingerprint": "HOLDOUT-8707-CLICKHOUSE-ALTER",
+      "repro_sha256": "48683c532d18bd2dc94c783beef3d8787792701cc94eb2dcd00c83d97a3ede2d",
+      "control_sha256": "dd1a85a7d45db5e6d4719454a9fbcc87275f7dbb7f60703272a44063c95f40fd"
+    },
+    {
+      "id": "sqlalchemy-13637",
+      "repo": "sqlalchemy",
+      "url": "https://github.com/sqlalchemy/sqlalchemy/issues/13637",
+      "file": "sqlalchemy/dialects/postgresql/base.py",
+      "failure_fingerprint": "HOLDOUT-13637-BRACKETED-IPV6",
+      "repro_sha256": "1180bf738101f0bc62271e67552016197a16521d84057e098f801c022671fb56",
+      "control_sha256": "e5cd6fd6391b7b816886713d3987a86fa12382b1601877b4e3968c49280f3cbc"
+    },
+    {
+      "id": "httpcore-1110",
+      "repo": "httpcore",
+      "url": "https://github.com/encode/httpcore/issues/1110",
+      "file": "httpcore/_async/connection_pool.py",
+      "failure_fingerprint": "HOLDOUT-1110-CLOSES-ASSIGNED",
+      "repro_sha256": "c02556e56c15a9907cd937e7405f3d19c01badb40e16cca632ad70cac5775956",
+      "control_sha256": "2bf22d31ba921ff344e26fe64a65b7a67d60593a7697fed74574c065fca49ad0"
+    }
+  ]
+}

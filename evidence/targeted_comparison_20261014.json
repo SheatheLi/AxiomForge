@@ -1,0 +1,411 @@
+{
+  "schema": "axiomforge.live-differential.v1",
+  "versions": {
+    "python": "3.13.5",
+    "httpx": "0.28.1",
+    "httpcore": "1.0.9",
+    "anyio": "4.13.0",
+    "h11": "0.16.0"
+  },
+  "setting": {
+    "pool_max_connections": 3,
+    "local_tcp_server": true,
+    "repetitions": 4
+  },
+  "strategies": [
+    {
+      "strategy": "baseline",
+      "mode": "single",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 0
+    },
+    {
+      "strategy": "baseline",
+      "mode": "double",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 1,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 2,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 3,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": null,
+          "pending": null,
+          "error": "TimeoutError"
+        }
+      ],
+      "observed_bad_snapshots": 3,
+      "blocked_runs": 1,
+      "trace_interruptions": 6
+    },
+    {
+      "strategy": "shield-only",
+      "mode": "single",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 0
+    },
+    {
+      "strategy": "shield-only",
+      "mode": "double",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 1,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 2,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 3,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": null,
+          "pending": null,
+          "error": "TimeoutError"
+        }
+      ],
+      "observed_bad_snapshots": 3,
+      "blocked_runs": 1,
+      "trace_interruptions": 6
+    },
+    {
+      "strategy": "rearm-after-cancellation",
+      "mode": "single",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 0
+    },
+    {
+      "strategy": "rearm-after-cancellation",
+      "mode": "double",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 8
+    },
+    {
+      "strategy": "defer-commit",
+      "mode": "single",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 0
+    },
+    {
+      "strategy": "defer-commit",
+      "mode": "double",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 8
+    },
+    {
+      "strategy": "singleflight-commit",
+      "mode": "single",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 0
+    },
+    {
+      "strategy": "singleflight-commit",
+      "mode": "double",
+      "rows": [
+        {
+          "iteration": 1,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 2,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 3,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        },
+        {
+          "iteration": 4,
+          "active": 0,
+          "pending": 0,
+          "error": null
+        }
+      ],
+      "observed_bad_snapshots": 0,
+      "blocked_runs": 0,
+      "trace_interruptions": 4
+    }
+  ],
+  "model_check": {
+    "early-commit": {
+      "strategy": "early-commit",
+      "attempts_limit": 2,
+      "max_interruptions": 1,
+      "state_count": 5,
+      "terminal_count": 2,
+      "bad_terminal_count": 1,
+      "shortest_counterexample": {
+        "states": [
+          {
+            "phase": "READY",
+            "flag": false,
+            "connection": "ACTIVE",
+            "attempts": 0,
+            "interruptions": 0
+          },
+          {
+            "phase": "WAIT_LOCK",
+            "flag": true,
+            "connection": "ACTIVE",
+            "attempts": 1,
+            "interruptions": 0
+          },
+          {
+            "phase": "READY",
+            "flag": true,
+            "connection": "ACTIVE",
+            "attempts": 1,
+            "interruptions": 1
+          },
+          {
+            "phase": "DONE",
+            "flag": true,
+            "connection": "ACTIVE",
+            "attempts": 1,
+            "interruptions": 1
+          }
+        ],
+        "actions": [
+          "enter_close",
+          "cancel_at_lock_await",
+          "return"
+        ]
+      },
+      "scope": "Finite abstraction only. One interruption with two retries is repairable with deferred commit; two exhausted attempts may still leak. Not a production scheduler proof."
+    },
+    "defer-commit": {
+      "strategy": "defer-commit",
+      "attempts_limit": 2,
+      "max_interruptions": 1,
+      "state_count": 6,
+      "terminal_count": 2,
+      "bad_terminal_count": 0,
+      "shortest_counterexample": null,
+      "scope": "Finite abstraction only. One interruption with two retries is repairable with deferred commit; two exhausted attempts may still leak. Not a production scheduler proof."
+    }
+  },
+  "candidate_patch_sha256": "8daac06e2ac968d1580683819177c3dd9564ad19b113380bde73cfddb43dc45c",
+  "warnings": [
+    "Candidate monkeypatch changes private HTTPcore internals, not for production",
+    "Local timing-dependent reproduction only; not an upstream regression test result",
+    "Bounded model has deliberately simplified scheduler and assumes caller retry"
+  ]
+}

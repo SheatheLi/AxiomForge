@@ -1,0 +1,38 @@
+{
+  "evidence": {
+    "blocked": [
+      [
+        4,
+        "TimeoutError"
+      ]
+    ],
+    "cleanup_cancel_count": 6,
+    "early_committed_close_interrupted": 3,
+    "first_iteration": 4,
+    "notes": "Cancellation stage evidence is observed instrumentation, not a full causal proof.",
+    "present": true,
+    "protocol_findings": [
+      "STRANDED_ACTIVE_POOL_CONNECTION"
+    ],
+    "quiescent_active": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ]
+  },
+  "minimum_repetitions": 4,
+  "native_result": "raw/independent_replay.json",
+  "schema": "axiomforge.native-issue-replay.v1",
+  "source_triage_sha256": "08dae3ec633af265d6a1eb4e756e2d16c68aa8fb56868fa82dfd39cd83b7ede6",
+  "status": "REPRODUCED",
+  "symptom": "pool_exhaustion"
+}
