@@ -48,6 +48,7 @@ def test_rehashed_false_claim_rejected_by_structure(tmp_path):
     p.write_text(json.dumps(data))
     with pytest.raises(ValueError,match='unsound guard'):verify(p,rerun=False)
 
+@pytest.mark.historical_replay
 def test_three_independent_contracts_exposed():
     p=run_suite(budget=4,max_rows=2)
     assert len(p['searches'])==3
@@ -88,6 +89,7 @@ def test_independent_guard_does_not_trust_unknown_target():
     assert not independent_checks('unknown',{},None,{})['domain_valid']
 
 
+@pytest.mark.historical_replay
 def test_all_attempts_provenance_saved_and_replayed(tmp_path):
     p=tmp_path/'raw.json';write(p,run_suite(budget=8,max_rows=2))
     data=json.loads(p.read_text())
@@ -106,6 +108,7 @@ def test_deleted_observation_rejected_even_if_digest_recomputed(tmp_path):
     with pytest.raises(ValueError,match='raw observations'):
         verify(p,rerun=True)
 
+@pytest.mark.historical_replay
 def test_forged_consistent_observation_rejected_even_if_rehashed(tmp_path):
     p=tmp_path/'raw.json';write(p,run_suite(budget=4,max_rows=2))
     obj=json.loads(p.read_text());obj['payload']['searches'][2]['observations'][0]['status']='CONSISTENT'

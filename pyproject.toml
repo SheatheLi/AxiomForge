@@ -41,6 +41,9 @@ where = ["src"]
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra"
-markers = ["slow: live network loopback / real library regression"]
+markers = [
+    "slow: live network loopback / real library regression",
+    "historical_replay: assertions requiring frozen pre-fix third-party library behavior",
+]
 
 # Standalone executable for real CSV/warehouse extracts.
