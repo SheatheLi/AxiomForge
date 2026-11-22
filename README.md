@@ -49,6 +49,10 @@ python scripts/verify_all.py --mode full --per-file-seconds 150
 | [`evidence/regression/全量回归结果.json`](evidence/regression/全量回归结果.json) | 全量回归收据 |
 | [`tests/`](tests/) · [`benchmarks/`](benchmarks/) | 行为合同与性能实验 |
 
+## CI与依赖兼容性
+
+[历史缺陷重放与当前依赖兼容性的双轨CI说明](docs/ci-compatibility.md)：历史缺陷见证使用冻结的第三方库版本；当前依赖测试验证版本无关的合同，不强行要求已修复的上游缺陷再次出现。
+
 ## 历史测试与规模证据
 
 按44个测试文件隔离执行的历史收据记录**447项：437通过、10跳过、0失败、0超时**。10项跳过中，4项缺少v1.1冻结证据、6项需要未随包提供的上游CSV；不能把这些测试说成已经通过，也不能因此推断独立的上游修复已合并。
