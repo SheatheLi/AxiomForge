@@ -8,7 +8,7 @@ version = "1.6.0"
 description = "Python fault injection and cross-layer resource lifecycle protocol verification, with legacy analysis tools"
 requires-python = ">=3.10"
 authors = [{name="Independent engineering portfolio"}]
-dependencies = []
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "SQLAlchemy>=2.0,<2.1"]
 
 [project.optional-dependencies]
 test = ["pytest>=8", "coverage>=7"]

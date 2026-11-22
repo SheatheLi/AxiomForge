@@ -1,5 +1,7 @@
 # AxiomForge
 
+[**在线交互展示**](https://sheatheli.github.io/AxiomForge/) · [**工程证据与验证索引**](docs/verification-map.md) · [![Smoke CI](https://github.com/SheatheLi/AxiomForge/actions/workflows/smoke.yml/badge.svg)](https://github.com/SheatheLi/AxiomForge/actions/workflows/smoke.yml)
+
 > 以**失败判据、反例和可重复执行的证据**为核心的程序验证工具集合：从SQL事实粒度问题、异步资源生命周期到有界候选变换和输入缩减，不把“测试通过”误认为全系统正确性证明。
 
 **工程状态：** 可执行CLI与多个可独立使用的研究组件，包含局部验证、历史回归及合成规模实验；部分历史来源缺失的测试仍明确跳过。
